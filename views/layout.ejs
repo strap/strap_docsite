@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wearable Analytics and Software Development Platform - Strap</title>
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- styles -->
+    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/strap.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+      analytics.load("n2l2tgptvf");
+      analytics.page()
+      }}();
+    </script>
+    <script>   
+
+      var page = "<%- page %>"; 
+      var dashboard = "<%- config.dashboard %>";
+
+    </script>
+    
+  </head>
+
+  <body>
+        
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="full left">
+                <h2 class="left">The Wearables Revolution</h2>
+                <a type="button" class="h2 right" data-dismiss="modal" aria-hidden="true"><i class="icon-close"></i></a>
+            </div>
+            <div class="full left fitVid box-shadowed">
+                <iframe src="" width="1280" height="720" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="top" class="main-body">
+      <div class="main-content full">
+
+            <%- partial('header.ejs') %>
+
+                <%- partial(body) %>
+
+            <%- partial('footer.ejs') %>
+            <!-- /.main-content -->
+        </div>
+    </div>
+   
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="js/jquery.vide.js"></script>
+    <script src="js/headroom.js"></script>
+    <script src="js/compressed.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+  </body>
+</html>

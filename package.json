@@ -1,0 +1,30 @@
+{
+  "name": "strap_website",
+  "version": "1.0.0",
+  "description": "",
+  "server": {
+    "protocol": "http",
+    "port": 8000
+  },
+  "config": {
+    "domain": "",
+    "dashboard": "https://my.straphq.com",
+    "mailChimpAPIKey": "4b87ddf42d741cc7ce50b5e2acebb9af-us8",
+    "mailChimpLists": {
+      "blog": "54890777a7",
+      "investors": "82c0a4edc4",
+      "products": "a796ede5d5"
+    },
+    "supportEmail": "support@straphq.com"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "ejs-locals": "^1.0.2",
+    "express": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
