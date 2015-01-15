@@ -1,6 +1,7 @@
 //Scripts for Main page
 
 var url = {};
+var segs = [];
 
 //Get everything rolling
 $( window ).ready(kickstart);
@@ -9,14 +10,31 @@ $( window ).ready(kickstart);
 function kickstart() {
 
     url = $.url();
+    segements();
 
-	console.log("We are kickstarting "+ url.attr('path') );
-    load_page("home");
+	console.log("We are kickstarting "+ url.segment(1) );
+    
+    console.log(segs);
+
+    load_page( mdName() );
+}
+
+function segements() {
+    segs = [];
+    for(var i=1; i<3; i++) {
+        if(url.segment(i)){
+            segs.push(url.segment(i));
+        }
+    }
+}
+
+function mdName() {
+    return segs.join("-");
 }
 
 function load_page(page) {
     $.ajax({
-        url: "markdown/"+page+".md",
+        url: "/markdown/"+page+".md",
         success: function(data) {
             $("#content").html( marked(data) );
             console.log("loaded page "+page);
