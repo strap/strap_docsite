@@ -1,0 +1,66 @@
+
+<div class="topspacer">
+    <div class="container-fluid docs-body bg-gray-01">
+        <div class="row relative">
+            <!-- No Secondary Nav Layout -->
+            <%- partial('left.ejs') %>
+
+            <div class="col-sm-3 col-md-2 col-sm-offset-2 col-md-offset-1 bg-gray-02 sidebar">
+                <div class="horiz-padded">
+                    <h2>Getting Started</h2> 
+                    <ul class="nav">
+                        <li>
+                            <a href="">StrapKit for Pebble</a>
+                        </li>
+                        <li>
+                            <a href="">StrapKit for Wear</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-7 col-md-9 col-sm-offset-5 col-md-offset-3 bg-gray-01 main">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-3 pull-right bg-gray-02"  data-spy="affix" data-offset-top="135" data-offset-bottom="200">
+                        <ul class="nav">
+                            <li>
+                                <a href="">strapkit_pebble</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <article id="content" class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+                            <a id="user-content-strapkit_pebble" class="anchor" href="#strapkit_pebble" aria-hidden="true"><span class="octicon octicon-link"></span></a>strapkit_pebble</h1>
+
+                            <p>StrapKit Pebble is the library that generates the Pebble code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the <code>strapkit create</code> command, but you can also use it ad-hoc to generate vanilla Pebble projects.</p>
+
+                            <h3>
+                            <a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+                            <pre><code>./bin/create --no-metrics &lt;path_to_new_project&gt; &lt;package_name&gt; &lt;project_name&gt; [&lt;project_template_dir&gt;]
+                            --no-metrics (optional): Do not include StrapMetrics
+                            &lt;path_to_new_project&gt;: Path to your new StrapKit Pebble project
+                            &lt;package_name&gt;: Package name, following reverse-domain style convention
+                            &lt;project_name&gt;: Project name
+                            &lt;project_template_dir&gt;: Path to project template (override).
+                            </code></pre>
+
+                            <p>Licensed under Apache 2.0. Portions derived from the scripts included with Apache Cordova.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+             <!-- Secondary Nav Layout -->
+            <!-- <div class="col-sm-2 col-md-1 bg-gray-03"> 
+
+            </div>
+            <div class="col-sm-3 col-md-2 bg-gray-02"> 
+
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 bg-gray-01 main">
+
+            </div> -->
+
+        </div>
+    </div>
+</div>
