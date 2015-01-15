@@ -14,14 +14,6 @@ var fs = require('fs')
 
 exports.init = function(config) {
 
-    //If we are going httpd
-    if(config.protocol === "https") {
-        var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
-        var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
-        var credentials = {key: privateKey, cert: certificate};
-    }
-
-
     app.configure(function(){
         app.set('views', __dirname + '/views');
         app.set('view engine', 'ejs');

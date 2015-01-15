@@ -8,14 +8,7 @@
   },
   "config": {
     "domain": "",
-    "dashboard": "https://my.straphq.com",
-    "mailChimpAPIKey": "4b87ddf42d741cc7ce50b5e2acebb9af-us8",
-    "mailChimpLists": {
-      "blog": "54890777a7",
-      "investors": "82c0a4edc4",
-      "products": "a796ede5d5"
-    },
-    "supportEmail": "support@straphq.com"
+    "dashboard": "https://my.straphq.com"
   },
   "main": "server.js",
   "dependencies": {
