@@ -21,11 +21,18 @@ exports.init = function(config) {
     });
 
     app.engine('ejs', engine);
+   
 
-    app.get('/*', function(req,res){
-      res.render('layout.ejs');
-    });
-    
+
+    // app.get('/*', function(req,res){
+    //   res.render('layout.ejs');
+    // });
+
+    app.get('/', function(req,res){
+      res.render('home.ejs');
+    }); 
+
+
     app.use( function(err, req, res, next) {
         res.render('500.ejs', { locals: { error: err }, status: 500 });
     });
