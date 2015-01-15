@@ -22,9 +22,7 @@ exports.init = function(config) {
 
     app.engine('ejs', engine);
 
-
-
-    app.get('/', function(req, res) {
+    app.get(['/',"/home"], function(req, res) {
         res.render('home.ejs');
     });
 

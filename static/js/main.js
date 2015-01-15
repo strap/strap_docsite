@@ -1,4 +1,3 @@
-//Scripts for Main page
 
 var url = {};
 var segs = [];
@@ -14,12 +13,19 @@ function kickstart() {
 
     load_page( mdName() );
 
+}
+
 function segements() {
     segs = [];
     for (var i = 1; i < 3; i++) {
         if (url.segment(i)) {
             segs.push(url.segment(i));
         }
+    }
+
+    //Default to home
+    if(!segs.length) {
+        segs.push("home");
     }
 }
 
@@ -33,7 +39,7 @@ function load_page(page) {
             url: "/markdown/" + page + ".md",
             success: function(data) {
                 $("#content").html(marked(data));
-                console.log("loaded page " + page);
+                console.log("loaded page " + page,data);
             }
         });
     }
