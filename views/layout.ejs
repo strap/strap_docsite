@@ -27,14 +27,7 @@
       analytics.load("n2l2tgptvf");
       analytics.page()
       }}();
-    </script>
-    <script>   
-
-      var page = "<%- page %>"; 
-      var dashboard = "<%- config.dashboard %>";
-
-    </script>
-    
+    </script>   
   </head>
 
   <body>
@@ -43,7 +36,7 @@
 
             <%- partial('header.ejs') %>
 
-                <%- partial(body) %>
+             <div id="content"></div>
 
             <%- partial('footer.ejs') %>
             <!-- /.main-content -->
@@ -53,6 +46,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/compressed.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/marked.js"></script>
     <script src="js/purl.js"></script>
     <script src="js/main.js"></script>
   </body>
