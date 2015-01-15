@@ -12,10 +12,6 @@ function kickstart() {
     url = $.url();
     segements();
 
-	console.log("We are kickstarting "+ url.segment(1) );
-    
-    console.log(segs);
-
     load_page( mdName() );
 }
 
