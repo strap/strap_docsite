@@ -13,6 +13,10 @@ Brought to you by:
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+  .compress {
+    margin: -10px 0;
+  }
+
 /*********************
 MEDIA QUERIES
 *********************/

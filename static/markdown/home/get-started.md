@@ -1,13 +1,19 @@
-# Markdown text goes in here
+# Welcome
 
-## Chapter 1
+Welcome to the documentation site for Strap.  This site includes guides and documentation for the Strap Kit and Strap Metrics.  Browse the sections on the left to explore the power Strap can bring to your werable application.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. 
+## Guides
 
-## Chapter 2
+The Guides section will take you thru:
+* building a cross platform wearable application
+* building a platform specific application
+* explore Wear dependencies
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+## Documentation
+
+The Documentation section will take you thru:
+* auto-checking your development environment and validating dependencies
+* the flow of creating your first Strap Kit application
+* deploying your application to a device
+* supported Strap Kit elements
+* utilizing Strap Metrics for greater insights into usage
