@@ -1,77 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Wearable Analytics and Software Development Platform - Strap</title>
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- styles -->
-    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/strap.css" rel="stylesheet">
-
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-    <script type="text/javascript">
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
-      analytics.load("n2l2tgptvf");
-      analytics.page()
-      }}();
-    </script>   
-  </head>
-
-  <body class="bg-gray-00">
-    <div id="top" class="main-body">
-      <div class="main-content full">
-
-            <%- partial('header.ejs') %>
-        
-            <div class="topspacer">
-                <div id="docs-body" class="container-fluid docs-body bg-gray-00">
-                    <div class="row relative">
-                        <!-- No Secondary Nav Layout -->
-                        <%- partial('left-home.ejs') %>
-                        <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 bg-gray-00 main">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6 text-white">
-                                    <div class="col-xs-12 bg-strap-stars padded-20">
-                                        <h1 class="text-center">New to Strap?</h1>
-                                        <p>Reduce the strain of learning multiple languages and APIs. Write in JavaScript and deploy across multiple platforms including Pebble, Android Wear, Google Glass, Tizen, and Apple Watch.</p>
-                                        <a class="btn btn-primary btn-inverted" href="/guides/strapkit">Get Started</a>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-md-6 text-white">
-                                    <div class="col-xs-12 bg-dark-coder padded-20">
-                                    <h1 class="text-center">Already Started?</h1>
-                                    <p>Reduce the strain of learning multiple languages and APIs. Write in JavaScript and deploy across multiple platforms including Pebble, Android Wear, Google Glass, Tizen, and Apple Watch.</p>
-                                    <a class="btn btn-primary btn-inverted" href="/guides/strapkit">Guides</a><a class="btn btn-primary btn-inverted horiz-margined" href="/docs/get-started">API &amp; Docs</a>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 bg-gray-00 main">
+        <div class="row">
+            <div id="float_nav_wrap" class="col-xs-12 col-sm-2 pull-right bg-gray-02">
+                <ul id="float_nav" class="nav"></ul>
             </div>
-
-            <!-- /.main-content -->
+            <div class="col-xs-12 col-sm-9">
+                <article id="content" class="markdown-body entry-content"></article>
+            </div>
         </div>
     </div>
-   
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/compressed.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/marked.js"></script>
-    <script src="/js/purl.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
-</html>

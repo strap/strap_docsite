@@ -22,7 +22,7 @@ var fs = require('fs'),
 
     //Main Home page - two versions
     app.get(['/',"/home"], function(req, res) {
-        res.render('home.ejs');
+        res.render('index.ejs');
     });
 
     //Handle other Pages
