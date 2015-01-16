@@ -12,10 +12,12 @@ body {
         position:relative;
         height:100%;
         .main-content {
-            margin-top: $navbar-height;
+            margin-top: 172px;
             position: relative;
             height: 100%;
-            //overflow-y: scroll;
+            @include breakpoint("desktop") {
+                margin-top: $navbar-height;
+            }
         }
     }
 }

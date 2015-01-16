@@ -1,15 +1,17 @@
 
     <% if(home) { %>
-        <div class="col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 bg-gray-00 main">
+        <div class="col-xs-12 col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 bg-gray-00 main">
     <% } else { %>
-        <div class="col-sm-7 col-md-9 col-sm-offset-5 col-md-offset-3 bg-gray-00 main">
+        <div class="col-xs-12 col-sm-7 col-md-9 col-sm-offset-5 col-md-offset-3 bg-gray-00 main">
     <% } %>
     
         <div class="row">
-            <div id="float_nav_wrap" class="col-xs-12 col-sm-2 pull-right bg-gray-02">
-                <ul id="float_nav" class="nav"></ul>
+            <div id="float_nav_wrap" class="col-xs-12 col-md-2 pull-right bg-gray-02">
+                <ul id="float_nav" class="nav hidden-xs hidden-sm"></ul>
+                <select id="float_nav_mobile" class="visible-xs visible-sm full">
+                </select>
             </div>
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-md-9">
                 <article id="content" class="markdown-body entry-content"></article>
             </div>
         </div>

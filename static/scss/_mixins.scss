@@ -53,6 +53,9 @@ MEDIA QUERIES
     @else if $section == phone {
     @media only screen and (min-width: 0) and (max-width:480px) { @content; }
     }
+    @else if $section == mobile {
+    @media only screen and (min-width: 0) and (max-width:767px) { @content; }
+    }
 }
 
 /*********************
