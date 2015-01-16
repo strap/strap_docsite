@@ -3139,6 +3139,9 @@ pre {
 .navbar-nav.navbar-right:last-child {
   margin-right: 0; }
 
+.nav li a:hover, .nav li a:active, .nav li a:focus {
+  background: rgba(0, 0, 0, 0.05); }
+
 #header.animated {
   -webkit-transition: transform 200ms linear;
   transition: transform 200ms linear; }
