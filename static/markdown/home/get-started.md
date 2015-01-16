@@ -1,9 +1,20 @@
-# Markdown text goes in here
+# Welcome
 
-## Chapter 1
+Welcome to the documentation site for Strap.  This site includes guides and documentation for the Strap Kit and Strap Metrics.  Browse the sections on the left to explore the power Strap can bring to your werable application.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. 
+## Guides
+
+The Guides section will take you thru:
+* building an application
+* 
+
+## Documentation
+
+The Guides section will take you thru:
+* checking your development environment and validating dependencies
+* creating your first Strap Kit application
+* deploying your application to a device
+* 
 
 ## Chapter 2
 
