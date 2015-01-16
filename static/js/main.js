@@ -52,6 +52,17 @@ function load_page() {
         $("#content").html(marked(error));
         clear_float();
     }
+
+    //Do some hiding stuff
+    if(section == "home") {
+        //hide the left menu
+        $("#menu").hide();
+    } else {
+        //Show the left menu
+        $("#menu").show();
+        $("#menu").children().hide();
+        $("#"+section).show();
+    }
 }
 
 //crawl across the links in the menu and plug them into the pushState stuff

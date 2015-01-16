@@ -27,8 +27,10 @@ var fs = require('fs'),
 
     //Handle other Pages
     app.get('/:template/:section', function(req, res) {
-    	//Load the template file
-        fs.readFile("./views/"+req.params.template+".ejs", function(err, data){
+    	//See if we need home or the basic one
+        var tem = (req.params.template == "home") ? "home" : "basic";
+        //Load the template file
+        fs.readFile("./views/"+tem+".ejs", function(err, data){
             if(err) {
                 res.render('404');
             } else {
