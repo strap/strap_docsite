@@ -89,6 +89,11 @@
 	
 }
 
+#float_nav_wrap {
+	position: fixed;
+	right:2em;
+}
+
 .table-border-right {
 
 	> thead > tr > th, > tbody > tr > th, > tfoot > tr > th, > thead > tr > td, > tbody > tr > td, > tfoot > tr > td {
