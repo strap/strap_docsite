@@ -34,10 +34,12 @@ function load_page() {
             },
             error: function() {
                 $("#content").html(marked(error));
+                clear_float();
             }
         });
     } else {
         $("#content").html(marked(error));
+        clear_float();
     }
 }
 
@@ -49,8 +51,15 @@ function activate_menu() {
   });
 }
 
+function clear_float() {
+    //Clear the current list
+    $("#float_nav").html('');
+}
+
 function crawl_jumps() {
     
+    clear_float();
+
     var set = [];
     var d = 0;
     $("#content h2").each(function() {
