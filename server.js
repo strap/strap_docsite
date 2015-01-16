@@ -6,8 +6,7 @@ var fs = require('fs'),
 	config = require('./package.json'),
     express = require('express'),
     engine = require('ejs-locals'),
-    app = express(),
-    credentials = {};
+    app = express();
 
     //configure Express
     app.configure(function() {
@@ -28,6 +27,7 @@ var fs = require('fs'),
 
     //Handle other Pages
     app.get('/:template/:section', function(req, res) {
+    	//Load the template file
         fs.readFile("./views/"+req.params.template+".ejs", function(err, data){
             if(err) {
                 res.render('404');
@@ -37,7 +37,7 @@ var fs = require('fs'),
         });
     });
 
-    //Something wnet wrong
+    //Something wett wrong
     app.use(function(err, req, res, next) {
         res.render('500.ejs', {
             locals: {
