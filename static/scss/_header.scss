@@ -513,6 +513,15 @@
 		}
 	}
 }
+.nav {
+	li {
+		a {
+			&:hover, &:active, &:focus {
+				background: $slight-trans-black;
+			}
+		}
+	}
+}
 
 #header.animated {
     @include transition(transform 200ms linear);

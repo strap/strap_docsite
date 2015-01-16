@@ -41,9 +41,10 @@
 		z-index: $sidebar-z-index;
 		display: block;
 		padding: 0;
-		overflow-x: hidden;
-		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 		padding-top:$navbar-height;
+		&.sidebar-icons {
+			z-index: $sidebar-z-index + 100;
+		}
 		.nav-icons {
 			list-style:none;
 			padding:0;
@@ -63,6 +64,23 @@
 					}
 					&.current, &.current:hover {
 						background-color: darken($gray-03, 5%);
+					}
+				}
+			}
+			&.nav-icons-home {
+				li {
+					a {
+						text-align:left;
+						i {
+							vertical-align:middle;
+							&.icon-power {
+								vertical-align: top;
+							}
+						}
+						span {
+							font-size: 0.5em;
+							vertical-align: middle;
+						}
 					}
 				}
 			}
@@ -88,6 +106,57 @@
 	}
 	
 }
+.compress {
+   margin: -10px 0;
+ }
+
+/*
+ * Main content
+ */
+
+.main {
+	margin-top:1.5em;
+	padding-bottom: 40px;
+	z-index: $main-z-index;
+	@include breakpoint("desktop") {	
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.row {
+		margin-left: 40px;
+		margin-right: 40px;
+		.row {
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+	}
+	.page-header {
+		margin-top: 0;
+		padding-left: 55px;
+		padding-right: 55px;
+		float:left;
+		width:100%;
+		border-bottom:none;
+		h1, .h1 {
+			//padding-left: 15px;
+		}
+	}
+	.alert-wrap {
+		padding: 20px 40px 0;
+		float:left;
+		width:100%;
+		background-color: $white;
+	}
+}
+.anchor[id]::before, .anchor[name]::before {
+	content: ' ';
+	display: block;
+	height: $navbar-height+20px;
+	margin-top: -75px;
+	visibility: hidden;
+}
+
+
 
 #float_nav_wrap {
 	position: fixed;
@@ -129,52 +198,6 @@
 
 
 
-/*
- * Main content
- */
-
-.main {
-	margin-top:1.5em;
-	padding-bottom: 40px;
-	@include breakpoint("desktop") {	
-		padding-right: 0px;
-		padding-left: 0px;
-	}
-	.row {
-		margin-left: 40px;
-		margin-right: 40px;
-		.row {
-			margin-left: -15px;
-			margin-right: -15px;
-		}
-	}
-	.page-header {
-		margin-top: 0;
-		padding-left: 55px;
-		padding-right: 55px;
-		float:left;
-		width:100%;
-		border-bottom:none;
-		h1, .h1 {
-			//padding-left: 15px;
-		}
-	}
-	.alert-wrap {
-		padding: 20px 40px 0;
-		float:left;
-		width:100%;
-		background-color: $white;
-	}
-}
-.anchor[id]::before, .anchor[name]::before {
-	content: ' ';
-	display: block;
-	height: $navbar-height+20px;
-	margin-top: -75px;
-	visibility: hidden;
-}
-
-
 
 
 .overlay-wrap {
@@ -200,5 +223,22 @@
 	margin-bottom:15px;
 }
 
+.bg-strap-stars {
+	background: rgb(71,184,229);
+	background-image: url("../img/stars-bg.png"), -moz-linear-gradient(left,  rgba(103,192,130,1) 0%, rgba(71,184,229,1) 100%);
+	background-image: url("../img/stars-bg.png"), -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(103,192,130,1)), color-stop(100%,rgba(71,184,229,1)));
+	background-image: url("../img/stars-bg.png"), -webkit-linear-gradient(left,  rgba(103,192,130,1) 0%,rgba(71,184,229,1) 100%);
+	background-image: url("../img/stars-bg.png"), -o-linear-gradient(left,  rgba(103,192,130,1) 0%,rgba(71,184,229,1) 100%);
+	background-image: url("../img/stars-bg.png"), -ms-linear-gradient(left,  rgba(103,192,130,1) 0%,rgba(71,184,229,1) 100%);
+	background-image: url("../img/stars-bg.png"), linear-gradient(to right,  rgba(103,192,130,1) 0%,rgba(71,184,229,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67c082', endColorstr='#47b8e5',GradientType=1 ); 
+	background-size: auto 150%;
+	background-position: center;
+}
+.bg-dark-coder {
+	background-image: url("../img/dark-coder-bg.jpg");
+	background-size: auto 150%;
+	background-position: center;
 
+}
 

@@ -9,7 +9,7 @@ var url = {}
 $(window).ready(function() {
 
 
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 
     //do some stuff to get everything plugged in
     activate_menu();    //turn on menu pushState
