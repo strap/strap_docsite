@@ -2737,6 +2737,8 @@ pre {
     animation-fill-mode: both; }
 
 .navbar-home .navbar {
+  -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
   border: 0; }
   .navbar-home .navbar .navbar-header .navbar-brand {
     padding: 0.5em 0;
@@ -3929,7 +3931,10 @@ section {
 
 #float_nav_wrap {
   position: fixed;
-  right: 2em; }
+  right: 2em;
+  -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  padding: 0; }
 
 .table-border-right > thead > tr > th, .table-border-right > tbody > tr > th, .table-border-right > tfoot > tr > th, .table-border-right > thead > tr > td, .table-border-right > tbody > tr > td, .table-border-right > tfoot > tr > td {
   border-right: 1px solid #ddd; }
@@ -3973,6 +3978,13 @@ section {
     float: left;
     width: 100%;
     background-color: white; }
+
+.anchor[id]::before, .anchor[name]::before {
+  content: ' ';
+  display: block;
+  height: 95px;
+  margin-top: -75px;
+  visibility: hidden; }
 
 .overlay-wrap {
   position: relative; }

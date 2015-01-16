@@ -1,5 +1,6 @@
 .navbar-home {
 	.navbar {
+		@include box-shadow(0 0.125em 0.25em rgba(0, 0, 0, 0.1));
 		border:0;
 		.navbar-header {
 			.navbar-brand {

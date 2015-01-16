@@ -8,25 +8,6 @@ var url = {}
 //Get everything rolling
 $(window).ready(function() {
 
-    // $('#float_nav_wrap').affix({
-    //     offset: {
-    //         top: 119
-    //     }
-    // });
-    // $('#content').scrollspy({
-    //     target: "#float_nav_wrap"
-    // });
-    $(".scrollToLink").click(function(e) {
-        // var _this = this;
-        // $('#docs-body').animate({
-        //     scrollTop: $(e.currentTarget.hash).offset().top - 75
-        // }, 600);
-        var elementClicked = $(this).attr("href");
-       var destination = $(elementClicked).offset().top;
-        alert(destination+" = "+parseInt($("#docs-body").scrollTop()+destination));
-       $("#docs-body").animate({ scrollTop: parseInt($("#docs-body").scrollTop() + destination)} );
-       e.preventDefault();
-    });
 
     $('[data-toggle="tooltip"]').tooltip()
 
@@ -98,8 +79,8 @@ function crawl_jumps() {
     $("#content h3").each(function() {
         var t = $(this).text();
         var id = "jump"+d;
-        $(this).attr("id",id);
-        $("#float_nav").append("<li><a class='scrollToLink' href=\"#"+id+"\">"+t+'</a></li>');
+        $(this).attr("id",id).addClass("anchor");
+        $("#float_nav").append("<li><a href=\"#"+id+"\">"+t+'</a></li>');
         d++;
     });
 }
