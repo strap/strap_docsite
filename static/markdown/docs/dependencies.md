@@ -1,5 +1,7 @@
 # Strap Kit JS Android Wear Dependencies
 
+### Version 0.0.1
+
 ## JAVA_HOME
 #### Linux
 Check if already set

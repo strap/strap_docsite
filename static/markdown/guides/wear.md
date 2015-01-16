@@ -1,7 +1,6 @@
 # Strap Kit JS Android Wear
  
-## Version
-0.0.1
+### Version 0.0.1
 
 ## Create your Android Wear app from Strap Kit JS
 

@@ -4,62 +4,61 @@ A cross platform development framework for wearables.
 
 Use ```strapkit``` to generate a new project with Strap Metrics built right in. More to follow.
 
-## Version
-0.0.1
+### Version 0.0.1
 
 ## Checking Dependencies
 
 Strap Kit requires git, python, node, and npm at a minimum, and platform specific SDK's like Pebble and Android Wear to build for those platforms. To check your dependencies, you can run the command below (requires bash). For a full run down of how to install the dependencies, go to the <a href="https://docs.straphq.com" target="_blank">full developer docs</a>.
 
 ```bash
-$> curl https://check-config.straphq.com | bash
+$ curl http://check-config.straphq.com | bash
 ```
 
 ## Installation
 
 ```bash
-$> sudo npm install strapkit -g
+$ sudo npm install strapkit -g
 ```
 
 ## Strapkit Flow
 
 * Create your Strapkit project.
 ```bash
-$> strapkit create TestProject
+$ strapkit create TestProject
 ```
 OR
 ```bash
-$> strapkit create ./TestProject com.testproject TestProject
+$ strapkit create ./TestProject com.testproject TestProject
 ```
 
 * Write your app using the API documentation below.
 
 * Choose deployment platforms.
 ```bash
-$> strapkit platforms add pebble android-wear
+$ strapkit platforms add pebble android-wear
 ```
 OR, to add just one platform only, you may specify that platform by itself.
 ```bash
-$> strapkit platform add pebble
+$ strapkit platform add pebble
 ```
 Removing platforms is just as easy as adding them.
 ```bash
-$> strapkit platform remove pebble
+$ strapkit platform remove pebble
 ```
 
 * Compile for all platforms.
 ```bash
-$> strapkit build
+$ strapkit build
 ```
 OR, to compile for one platform only, you may specify just that platform.
 ```bash
-$> strapkit build pebble
+$ strapkit build pebble
 ```
 If you wish to forego using Strap kit to install your app, the compiled binary of your app is available in a "build" folder after running the Strap kit build command.
 
 * Install to device.
 ```bash
-$> strapkit install Phones.IP.Goes.Here
+$ strapkit install Phones.IP.Goes.Here
 ```
 Publish 'n' Profit!
 
