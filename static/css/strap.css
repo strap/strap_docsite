@@ -3926,10 +3926,6 @@ section {
       .sidebar .nav-sidebar li a.current, .sidebar .nav-sidebar li a.current:hover {
         color: #47b8e5; } }
 
-#float_nav_wrap {
-  position: fixed;
-  right: 2em; }
-
 .table-border-right > thead > tr > th, .table-border-right > tbody > tr > th, .table-border-right > tfoot > tr > th, .table-border-right > thead > tr > td, .table-border-right > tbody > tr > td, .table-border-right > tfoot > tr > td {
   border-right: 1px solid #ddd; }
   .table-border-right > thead > tr > th:last-child, .table-border-right > tbody > tr > th:last-child, .table-border-right > tfoot > tr > th:last-child, .table-border-right > thead > tr > td:last-child, .table-border-right > tbody > tr > td:last-child, .table-border-right > tfoot > tr > td:last-child {

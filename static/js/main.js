@@ -41,6 +41,15 @@ function load_page() {
         $("#content").html(marked(error));
         clear_float();
     }
+
+    $('#float_nav_wrap').affix({
+        offset: {
+            top: 119
+        }
+    });
+    $('.docs-body').scrollspy({
+        target: "#float_nav_wrap"
+    });
 }
 
 function activate_menu() {
