@@ -43,7 +43,7 @@
 		padding: 0;
 		overflow-x: hidden;
 		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-		padding-top:7.5em;
+		padding-top:$navbar-height;
 		.nav-icons {
 			list-style:none;
 			padding:0;
@@ -90,8 +90,8 @@
 }
 
 #float_nav_wrap {
-	//position: fixed;
-	//right:2em;
+	position: fixed;
+	right:2em;
 }
 
 .table-border-right {
@@ -129,7 +129,7 @@
  */
 
 .main {
-	padding-top:4.5em;
+	margin-top:1.5em;
 	padding-bottom: 40px;
 	@include breakpoint("desktop") {	
 		padding-right: 0px;

@@ -81,6 +81,9 @@ COLORS
 .text-regular {
   font-family: "Brandon Grotesque Regular"; }
 
+.bg-gray-00 {
+  background-color: #fafafa; }
+
 .bg-gray-01 {
   background-color: whitesmoke; }
 
@@ -2331,8 +2334,7 @@ body {
     body .main-body .main-content {
       margin-top: 75px;
       position: relative;
-      height: 100%;
-      overflow-y: scroll; }
+      height: 100%; }
 
 input {
   font-family: "Brandon Grotesque Light";
@@ -3899,7 +3901,7 @@ section {
     overflow-x: hidden;
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
-    padding-top: 7.5em; }
+    padding-top: 75px; }
     .sidebar .nav-icons {
       list-style: none;
       padding: 0; }
@@ -3926,6 +3928,10 @@ section {
       .sidebar .nav-sidebar li a.current, .sidebar .nav-sidebar li a.current:hover {
         color: #47b8e5; } }
 
+#float_nav_wrap {
+  position: fixed;
+  right: 2em; }
+
 .table-border-right > thead > tr > th, .table-border-right > tbody > tr > th, .table-border-right > tfoot > tr > th, .table-border-right > thead > tr > td, .table-border-right > tbody > tr > td, .table-border-right > tfoot > tr > td {
   border-right: 1px solid #ddd; }
   .table-border-right > thead > tr > th:last-child, .table-border-right > tbody > tr > th:last-child, .table-border-right > tfoot > tr > th:last-child, .table-border-right > thead > tr > td:last-child, .table-border-right > tbody > tr > td:last-child, .table-border-right > tfoot > tr > td:last-child {
@@ -3944,7 +3950,7 @@ section {
  * Main content
  */
 .main {
-  padding-top: 4.5em;
+  margin-top: 1.5em;
   padding-bottom: 40px; }
   @media (min-width: 768px) {
     .main {

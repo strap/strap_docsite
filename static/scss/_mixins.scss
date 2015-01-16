@@ -218,6 +218,7 @@ $green: #67c082;
 $dark-green: #52a06c;
 $trans-green: rgba(103,192,130,0.5);
 
+$gray-00: #fafafa;
 $gray-01: #f5f5f5;
 $gray-02: #f0f0f0;
 $gray-02-trans: rgba(255,255,255,0);
@@ -287,6 +288,9 @@ $strap-main-light: lighten($blue,10%);
     font-family: $sans-regular;
 }
 
+.bg-gray-00 {
+  background-color: $gray-00;
+}
 .bg-gray-01 {
   background-color: $gray-01;
 }

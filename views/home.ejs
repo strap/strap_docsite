@@ -30,18 +30,18 @@
     </script>   
   </head>
 
-  <body>
+  <body class="bg-gray-00">
     <div id="top" class="main-body">
       <div class="main-content full">
 
             <%- partial('header.ejs') %>
         
             <div class="topspacer">
-                <div class="container-fluid docs-body bg-gray-01">
+                <div id="docs-body" class="container-fluid docs-body bg-gray-00">
                     <div class="row relative">
                         <!-- No Secondary Nav Layout -->
                         <%- partial('left.ejs') %>
-                        <div class="col-sm-7 col-md-9 col-sm-offset-5 col-md-offset-3 bg-gray-01 main">
+                        <div class="col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 bg-gray-00 main">
                             <article id="content" class="markdown-body entry-content"></article>
                         </div>
                     </div>

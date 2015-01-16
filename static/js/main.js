@@ -8,6 +8,17 @@ var url = {}
 //Get everything rolling
 $(window).ready(function() {
 
+    // $('#float_nav_wrap').affix({
+    //     offset: {
+    //         top: 119
+    //     }
+    // });
+    // $('#content').scrollspy({
+    //     target: "#float_nav_wrap"
+    // });
+
+    $('[data-toggle="tooltip"]').tooltip()
+
     //do some stuff to get everything plugged in
     activate_menu();    //turn on menu pushState
     load_page();        //load the page content
@@ -49,15 +60,6 @@ function load_page() {
         $("#content").html(marked(error));
         clear_float();
     }
-
-    $('#float_nav_wrap').affix({
-        offset: {
-            top: 119
-        }
-    });
-    $('.docs-body').scrollspy({
-        target: "#float_nav_wrap"
-    });
 }
 
 //crawl across the links in the menu and plug them into the pushState stuff
@@ -85,7 +87,7 @@ function crawl_jumps() {
     $("#content h2").each(function() {
         var t = $(this).text();
         var id = "jump"+d;
-        $(this).attr("id",id)
+        $(this).attr("id",id);
         $("#float_nav").append("<li><a href=\"#"+id+"\">"+t+'</a></li>');
         d++;
     });
