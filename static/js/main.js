@@ -1,46 +1,49 @@
 
-var url = {};
-var segs = [];
+var url = {}
+    , section = ""
+    , page = ""
+    , error = "";
 
 //Get everything rolling
-$(window).ready(kickstart);
+$(window).ready(function() {
 
-//Main function for homepage
-function kickstart() {
+    activate_menu();
+    load_page();
+
+    //Load and store the error content
+    $.ajax({
+        url: "/markdown/error.md",
+        success: function(data) {
+            error = data;
+        }
+    });
+});
+
+function load_page() {
 
     url = $.url();
-    segements();
+    section = url.segment(1) || "home";
+    page = url.segment(2) || "get-started";
 
-    load_page( mdName() );
-
-}
-
-function segements() {
-    segs = [];
-    for (var i = 1; i < 3; i++) {
-        if (url.segment(i)) {
-            segs.push(url.segment(i));
-        }
-    }
-
-    //Default to home
-    if(!segs.length) {
-        segs.push("home");
-    }
-}
-
-function mdName() {
-    return segs.join("-");
-}
-
-function load_page(page) {
-    if (page.length) {
+    if (section && page) {
         $.ajax({
-            url: "/markdown/" + page + ".md",
+            url: "/markdown/"+section+"/" + page + ".md",
             success: function(data) {
                 $("#content").html(marked(data));
-                console.log("loaded page " + page,data);
+            },
+            error: function() {
+                $("#content").html(marked(error));
             }
         });
+    } else {
+        $("#content").html(marked(error));
     }
+}
+
+function activate_menu() {
+    $("#sidebar_nav li a").click(function() {
+    history.pushState({}, '', $(this).attr("href"));
+    load_page();
+    return false;
+  });
 }

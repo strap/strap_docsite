@@ -27,8 +27,14 @@ exports.init = function(config) {
     });
 
     //Other Pages
-    app.get('*', function(req, res) {
-        res.render('layout.ejs');
+    app.get('/:template/:section', function(req, res) {
+        fs.readFile("./views/"+req.params.template+".ejs", function(err, data){
+            if(err) {
+                res.render('404');
+            } else {
+                res.render('layout.ejs', {content: data.toString()});
+            }
+        });
     });
 
 

@@ -35,8 +35,18 @@
       <div class="main-content full">
 
             <%- partial('header.ejs') %>
+
+            <div class="topspacer">
+            <div class="container-fluid docs-body bg-gray-01">
+                <div class="row relative">
+                    <!-- No Secondary Nav Layout -->
+             <%- partial('left.ejs') %>
             
-             <%- partial('docs.ejs') %>
+             <%- content %>
+
+                     </div>
+                </div>
+            </div>
 
             <!-- /.main-content -->
         </div>
