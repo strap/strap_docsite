@@ -1,9 +1,9 @@
-## Strap Kit Elements
+# Strap Kit Elements
 
 ### Page
 A Page is the container for all your app's UI. When you create a new page, you are bringing the user to a different set of looks and actions.
 
-#### Example
+### Example
 
 ```javascript
 var splashPage = StrapKit.UI.Page();
@@ -19,7 +19,7 @@ splashPage.addView(card);
 // Tells your wearable app to show this page
 splashPage.show();
 ```
-#### Initialize
+### Initialize
 ```javascript
 var page = StrapKit.UI.Page();
 ```
@@ -28,19 +28,19 @@ OR
 var page = StrapKit.UI.Page(cardView);
 var page = StrapKit.UI.Page([textView, anotherView]);
 ```
-#### Add View
+### Add View
 ```javascript
 page.addView(textView);
 ```
-#### Show Page
+## Show Page
 ```javascript
 page.show();
 ```
 
-### Card View
+## Card View
 Card is a standard wearable UI compenent accross all platforms. This UI compenent typically has a title and a body associated with it, and can be clickable. This must be added to a Page in order for the compenent to be shown.
 
-#### Example
+### Example
 ```javascript
 var card = StrapKit.UI.Card({
   title: "My First App",
@@ -48,7 +48,7 @@ var card = StrapKit.UI.Card({
 });
 myPage.addView(card);
 ```
-#### Initialize
+### Initialize
 ```javascript
 var card = StrapKit.UI.Card({
     title: 'My Title',  // The title of your card
@@ -58,15 +58,15 @@ var card = StrapKit.UI.Card({
     }
 });
 ```
-#### Set On Click Function
+### Set On Click Function
 ```javascript
 card.setOnClick(function() {
     console.log("My Card was clicked");
 });
 ```
-### TextView
+## TextView
 TextView is a standard wearable UI compenent accross all platforms. This UI compenent can show text and a position of your your choosing.
-#### Example
+### Example
 ```javascript
 var textView = StrapKit.UI.TextView({
     position: "center",
@@ -74,7 +74,7 @@ var textView = StrapKit.UI.TextView({
 });
 myPage.addView(textView);
 ```
-#### Position
+### Position
 ```javascript
 StrapKit.UI.TextView({
     position: 'center|right|left'
@@ -83,9 +83,9 @@ StrapKit.UI.TextView({
     // left (default): puts text left justificed within your page
 });
 ```
-### ListView
+## ListView
 ListView is a standard wearable UI compenent accross all platforms. This UI compenent will show a list of items defined by you. And Item will contain a title and a subtitle as strings. To make the app more interactive, you can attach an object to and Item as data.
-#### Example
+### Example
 ```javascript
 var menuItems = [
     {
@@ -110,16 +110,16 @@ resultsMenu.setOnItemClick(function(e) {
     // 0
 });
 ```
-#### Set On Item Click
+### Set On Item Click
 ```javascript
 myList.setOnItemClick(function(e) {
     e.item // returns the item you clicked on containing title, subtitle and data
     e.itemIndex // returns the index of the item you clicked on
 });
 ```
-### HttpClient
+## HttpClient
 HttpClient allows you to access API clients outside of the wearable app.
-#### Example
+### Example
 ```javascript
 StrapKit.HttpClient(
   {
@@ -134,7 +134,7 @@ StrapKit.HttpClient(
   }
 );
 ```
-#### Opts
+### Opts
 ```javascript
 StrapKit.HttpClient({
   // url: url to call
@@ -143,18 +143,4 @@ StrapKit.HttpClient({
   // heaaders: { 'Authorization': 'Token: 0sdknweeksokdf0'}
 }, success, failure);
 ```
-### Strap Metrics
-With StrapKit JS, adding Strap Metrics to your app is a breeze.
-#### Initialize
-Initializing Strap Metrics allows you to immediately get access to diagnostics and sensor data. You can then log events that are specific to your app.
-```javascript
-var app_id = "8djanek08sdjk";
-StrapKit.Metrics.init(app_id); // Metrics will start logging sensor data
 
-// Log an event
-StrapKit.Metrics.logEvent("/myfirstevent/winning");
-
-// Log an event with data
-var myInfo = {info: "This was easy"};
-StrapKit.Metrics.logEvent("/myfirstevent/data", myInfo);
-```

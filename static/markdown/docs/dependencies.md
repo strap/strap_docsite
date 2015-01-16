@@ -1,9 +1,9 @@
 # Strap Kit JS Android Wear Dependencies
 
-### Version 0.0.1
+Version 0.0.1
 
 ## JAVA_HOME
-#### Linux
+### Linux
 Check if already set
 ```sh
 $ echo $JAVA_HOME
@@ -12,16 +12,16 @@ If nothing there simply make this command:
 ```sh
 $ sudo apt-get install openjdk-7-jdk
 ```
-#### Mac
+### Mac
 Follow this link: http://javatechig.com/java/core-java/set-java_home-environment-variable-mac-os-x
 
 ## ADB
-#### Linux
+### Linux
 To install:
 ```sh
 $ sudo apt-get install android-tools-adb
 ```
-#### Mac
+### Mac
 Should be included with Android SDK. Make sure you path is set up. Follow the Android SDK instructions
 
 ## ANDROID_HOME and Android SDK
@@ -30,7 +30,7 @@ If Android SDK already installed:
 $ export ANDROID_HOME=/path/to/sdk
 $ export PATH=$PATH:$ANDROID_HOME/tools
 ```
-#### Linux Installation
+### Linux Installation
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html). Check that ANDROID_HOME is in the path following the steps above.
 2. Option 2 without IDE: Follow these instructions: 
 ```sh
@@ -47,7 +47,7 @@ Note: For linux 64-bit machines, make sure you run the command:
 $ sudo apt-get install lib32stdc++6 lib32z1
 ```
 
-#### Mac Installation
+### Mac Installation
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html)
 2. Option 2 without IDE: Instructions coming soon...
 

@@ -76,7 +76,7 @@ function crawl_jumps() {
 
     var set = [];
     var d = 0;
-    $("#content h3").each(function() {
+    $("#content h2").each(function() {
         var t = $(this).text();
         var id = "jump"+d;
         $(this).attr("id",id).addClass("anchor");
