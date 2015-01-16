@@ -11,7 +11,7 @@ The Guides section will take you thru:
 
 ## Documentation
 
-The Guides section will take you thru:
+The Documentation section will take you thru:
 * auto-checking your development environment and validating dependencies
 * the flow of creating your first Strap Kit application
 * deploying your application to a device
