@@ -6,4 +6,17 @@ Use ```strapkit``` to generate a new project with Strap Metrics built right in. 
 
 # Write your first cross platform app
 
-blah blah blah
+```javascript
+var splashPage = StrapKit.UI.Page();
+
+var card = StrapKit.UI.Card({
+  title: 'Hello World',
+  body:'I am alive'
+});
+
+// Adds content to a Page
+splashPage.addView(card);
+
+// Tells your wearable app to show this page
+splashPage.show();
+```

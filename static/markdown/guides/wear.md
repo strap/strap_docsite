@@ -1,4 +1,4 @@
-# Strap Kit JS Android Wear
+# Strap Kit for Android Wear
  
 Version 0.0.1
 

@@ -1,4 +1,4 @@
-# Strap Kit JS for Pebble
+# Strap Kit for Pebble
 
 StrapKit Pebble is the library that generates the Pebble code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the `strapkit create` command, but you can also use it ad-hoc to generate vanilla Pebble projects.
 
