@@ -3139,8 +3139,11 @@ pre {
 .navbar-nav.navbar-right:last-child {
   margin-right: 0; }
 
-.nav li a:hover, .nav li a:active, .nav li a:focus {
-  background: rgba(0, 0, 0, 0.05); }
+.nav li a {
+  -webkit-transition: background-color 0.15s ease-in-out, opacity 0.3s ease-in-out;
+  transition: background-color 0.15s ease-in-out, opacity 0.3s ease-in-out; }
+  .nav li a:hover, .nav li a:active, .nav li a:focus {
+    background: rgba(0, 0, 0, 0.05); }
 
 #header.animated {
   -webkit-transition: transform 200ms linear;
@@ -3949,6 +3952,8 @@ section {
       list-style: none;
       padding: 0; }
       .sidebar .nav-icons li a {
+        -webkit-transition: background-color 0.15s ease-in-out, opacity 0.3s ease-in-out;
+        transition: background-color 0.15s ease-in-out, opacity 0.3s ease-in-out;
         display: block;
         text-align: center;
         font-size: 2.5em;
