@@ -20,23 +20,18 @@ var fs = require('fs'),
     //EJS is the engine - start it up
     app.engine('ejs', engine);
 
-    //Main Home page - two versions
-    app.get(['/',"/home"], function(req, res) {
-        res.render('index.ejs');
+    //Main Home page
+    app.get("/", function(req, res) {
+        res.render('layout.ejs', {index: true, home: true});
+    });
+
+    app.get("/home", function(req, res) {
+        res.render('layout.ejs', {index: false, home: true});
     });
 
     //Handle other Pages
     app.get('/:template/:section', function(req, res) {
-    	//See if we need home or the basic one
-        var tem = (req.params.template == "home") ? "home" : "basic";
-        //Load the template file
-        fs.readFile("./views/"+tem+".ejs", function(err, data){
-            if(err) {
-                res.render('404');
-            } else {
-                res.render('layout.ejs', {content: data.toString()});
-            }
-        });
+        res.render('layout.ejs', {index: false, home: false});
     });
 
     //Something wett wrong

@@ -1,30 +1,39 @@
-            <div class="col-sm-2 col-md-1 bg-gray-03 sidebar sidebar-icons">
-                <ul class="nav-icons">
-                    <li>
-                        <a href="/home/get-started" data-toggle="tooltip" data-placement="right" title="Get Started">
-                            <i class="icon-power"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/guides/strapkit" data-toggle="tooltip" data-placement="right" title="Guides">
-                            <i class="icon-notebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/docs/strapkit" data-toggle="tooltip" data-placement="right" title="Documentation">
-                            <i class="icon-api"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://strap.uservoice.com/" target="_blank" data-toggle="tooltip" data-placement="right" title="Community Help">
-                            <i class="icon-help"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/strap/" data-toggle="tooltip" data-placement="right" title="More">
-                            <i class="icon-more-horiz"></i>
+    <% if(index) { %>
+        <div class="col-sm-3 col-md-2 bg-gray-03 sidebar sidebar-icons">
+    <% } else { %>
+        <div class="col-sm-2 col-md-1 bg-gray-03 sidebar sidebar-icons">
+    <% } %>
+        <ul class="nav-icons nav-icons-home">
+            <li>
+                <a href="/home"  title="Get Started">
+                    <i class="icon-power"></i>
+                    <span>Get Started</span>
+                </a>
+            </li>
+            <li>
+                <a href="/guides/strapkit"  title="Guides">
+                    <i class="icon-notebook"></i>
+                    <span>Guides</span>
+                </a>
+            </li>
+            <li>
+                <a href="/docs/strapkit"  title="Documentation">
+                    <i class="icon-api"></i>
+                    <span>API &amp; Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://strap.uservoice.com/" title="Community Help">
+                    <i class="icon-help"></i>
+                    <span>Support</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/strap/" title="More">
+                    <i class="icon-more-horiz"></i>
+                    <span>More</span>
 
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                </a>
+            </li>
+        </ul>
+    </div>
