@@ -3120,8 +3120,7 @@ pre {
   height: 75%; }
 
 .main-content {
-  float: right;
-  background: #fcfcfc; }
+  float: right; }
   @media (min-width: 768px) {
     .main-content {
       margin-top: 3em; } }
