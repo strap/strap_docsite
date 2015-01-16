@@ -1,8 +1,10 @@
-# Strap Kit - Cross-Platform Tools for Wearable Developers
+# Strap Kit
+
+### Cross-Platform Tools for Wearable Developers
 
 A cross platform development framework for wearables.  Strap currently supports build for Pebble and Wear.  In the future, we are working on adding support for Apple Watch and Samsung Gear.  Strap Kit will grow to be a single tool for create and integrating wearable applications across platforms.
 
-# Write your first cross platform app
+### Write your first cross platform app
 
 StrapKit is the library that generates the Pebble and Wear code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the `strapkit create` command, but you can also use it ad-hoc to generate vanilla Pebble projects.
 

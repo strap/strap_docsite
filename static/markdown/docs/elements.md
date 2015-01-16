@@ -1,6 +1,6 @@
 # Strap Kit Elements
 
-### Page
+## Page
 A Page is the container for all your app's UI. When you create a new page, you are bringing the user to a different set of looks and actions.
 
 ### Example
@@ -32,7 +32,7 @@ var page = StrapKit.UI.Page([textView, anotherView]);
 ```javascript
 page.addView(textView);
 ```
-## Show Page
+### Show Page
 ```javascript
 page.show();
 ```
@@ -64,7 +64,7 @@ card.setOnClick(function() {
     console.log("My Card was clicked");
 });
 ```
-## TextView
+## Text View
 TextView is a standard wearable UI compenent accross all platforms. This UI compenent can show text and a position of your your choosing.
 ### Example
 ```javascript
@@ -83,7 +83,7 @@ StrapKit.UI.TextView({
     // left (default): puts text left justificed within your page
 });
 ```
-## ListView
+## List View
 ListView is a standard wearable UI compenent accross all platforms. This UI compenent will show a list of items defined by you. And Item will contain a title and a subtitle as strings. To make the app more interactive, you can attach an object to and Item as data.
 ### Example
 ```javascript
