@@ -1,6 +1,5 @@
 .main-content {
     float:right;
-    background:#fcfcfc;
 	@include breakpoint("desktop") {
         margin-top:3em;
 	}
