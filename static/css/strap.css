@@ -146,36 +146,36 @@ COLORS
     float: left; } }
 @font-face {
   font-family: 'Brandon Grotesque Thin';
-  src: url("/fonts/brandon_thin-webfont.eot");
-  src: url("/fonts/brandon_thin-webfont.eot") format("embedded-opentype"), url("/fonts/brandon_thin-webfont.woff") format("woff"), url("/fonts/brandon_thin-webfont.ttf") format("truetype"), url("/fonts/brandon_thin-webfont.svg#brandon_grotesquethin") format("svg");
+  src: url("../fonts/brandon_thin-webfont.eot");
+  src: url("../fonts/brandon_thin-webfont.eot") format("embedded-opentype"), url("../fonts/brandon_thin-webfont.woff") format("woff"), url("../fonts/brandon_thin-webfont.ttf") format("truetype"), url("../fonts/brandon_thin-webfont.svg#brandon_grotesquethin") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Brandon Grotesque Light';
-  src: url("/fonts/brandon_light-webfont.eot");
-  src: url("/fonts/brandon_light-webfont.eot") format("embedded-opentype"), url("/fonts/brandon_light-webfont.woff") format("woff"), url("/fonts/brandon_light-webfont.ttf") format("truetype"), url("/fonts/brandon_light-webfont.svg#brandon_grotesquelight") format("svg");
+  src: url("../fonts/brandon_light-webfont.eot");
+  src: url("../fonts/brandon_light-webfont.eot") format("embedded-opentype"), url("../fonts/brandon_light-webfont.woff") format("woff"), url("../fonts/brandon_light-webfont.ttf") format("truetype"), url("../fonts/brandon_light-webfont.svg#brandon_grotesquelight") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Brandon Grotesque Light Italic';
-  src: url("/fonts/brandon_light_it-webfont.eot");
-  src: url("/fonts/brandon_light_it-webfont.eot") format("embedded-opentype"), url("/fonts/brandon_light_it-webfont.woff") format("woff"), url("/fonts/brandon_light_it-webfont.ttf") format("truetype"), url("/fonts/brandon_light_it-webfont.svg#brandon_grotesquelight_italic") format("svg");
+  src: url("../fonts/brandon_light_it-webfont.eot");
+  src: url("../fonts/brandon_light_it-webfont.eot") format("embedded-opentype"), url("../fonts/brandon_light_it-webfont.woff") format("woff"), url("../fonts/brandon_light_it-webfont.ttf") format("truetype"), url("../fonts/brandon_light_it-webfont.svg#brandon_grotesquelight_italic") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Brandon Grotesque Regular';
-  src: url("/fonts/brandon_reg-webfont.eot");
-  src: url("/fonts/brandon_reg-webfont.eot") format("embedded-opentype"), url("/fonts/brandon_reg-webfont.woff") format("woff"), url("/fonts/brandon_reg-webfont.ttf") format("truetype"), url("/fonts/brandon_reg-webfont.svg#brandon_reg") format("svg");
+  src: url("../fonts/brandon_reg-webfont.eot");
+  src: url("../fonts/brandon_reg-webfont.eot") format("embedded-opentype"), url("../fonts/brandon_reg-webfont.woff") format("woff"), url("../fonts/brandon_reg-webfont.ttf") format("truetype"), url("../fonts/brandon_reg-webfont.svg#brandon_reg") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'strap';
-  src: url("/fonts/strap.eot");
-  src: url("/fonts/strap.eot?#iefix") format("embedded-opentype"), url("/fonts/strap.svg#strap") format("svg"), url("/fonts/strap.woff") format("woff"), url("/fonts/strap.ttf") format("truetype");
+  src: url("../fonts/strap.eot");
+  src: url("../fonts/strap.eot?#iefix") format("embedded-opentype"), url("../fonts/strap.svg#strap") format("svg"), url("../fonts/strap.woff") format("woff"), url("../fonts/strap.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -190,6 +190,27 @@ COLORS
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-search:before {
+  content: "\e679"; }
+
+.icon-filter:before {
+  content: "\e67a"; }
+
+.icon-grid:before {
+  content: "\e6dd"; }
+
+.icon-list:before {
+  content: "\e6de"; }
+
+.icon-menu:before {
+  content: "\e6df"; }
+
+.icon-more-vert:before {
+  content: "\e6e0"; }
+
+.icon-more-horiz:before {
+  content: "\e6e1"; }
 
 .icon-play:before {
   content: "\e678"; }
@@ -1388,6 +1409,22 @@ BOOTSTRAP VARIABLES
   border-radius: 1.25em 1.25em 0 0;
   padding: 0.75em 1em 0.5em; }
 
+/**************************
+ Tooltips
+**************************/
+.tooltip {
+  font-size: 1.25em;
+  font-family: "Brandon Grotesque Light";
+  white-space: nowrap;
+  opacity: 1;
+  filter: alpha(opacity=100); }
+  .tooltip .tooltip-inner {
+    -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    background-color: #3b4250; }
+  .tooltip.right .tooltip-arrow {
+    border-right-color: #3b4250; }
+
 /* Artfully masterminded by ZURB */
 body {
   position: relative; }
@@ -2411,6 +2448,9 @@ pre {
 
 .padded {
   padding: 10px; }
+
+.padded-20 {
+  padding: 20px; }
 
 .vert-padded {
   padding-top: 1em;
@@ -3896,13 +3936,12 @@ section {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 100;
     display: block;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    /* Scrollable contents if viewport is shorter than content. */
     padding-top: 75px; }
+    .sidebar.sidebar-icons {
+      z-index: 200; }
     .sidebar .nav-icons {
       list-style: none;
       padding: 0; }
@@ -3917,6 +3956,15 @@ section {
           background-color: #cdcdcd; }
         .sidebar .nav-icons li a.current, .sidebar .nav-icons li a.current:hover {
           background-color: #d9d9d9; }
+      .sidebar .nav-icons.nav-icons-home li a {
+        text-align: left; }
+        .sidebar .nav-icons.nav-icons-home li a i {
+          vertical-align: middle; }
+          .sidebar .nav-icons.nav-icons-home li a i.icon-power {
+            vertical-align: top; }
+        .sidebar .nav-icons.nav-icons-home li a span {
+          font-size: 0.5em;
+          vertical-align: middle; }
     .sidebar .nav-sidebar li a {
       -webkit-transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
       transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
@@ -3929,33 +3977,16 @@ section {
       .sidebar .nav-sidebar li a.current, .sidebar .nav-sidebar li a.current:hover {
         color: #47b8e5; } }
 
-#float_nav_wrap {
-  position: fixed;
-  right: 2em;
-  -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
-  padding: 0; }
-
-.table-border-right > thead > tr > th, .table-border-right > tbody > tr > th, .table-border-right > tfoot > tr > th, .table-border-right > thead > tr > td, .table-border-right > tbody > tr > td, .table-border-right > tfoot > tr > td {
-  border-right: 1px solid #ddd; }
-  .table-border-right > thead > tr > th:last-child, .table-border-right > tbody > tr > th:last-child, .table-border-right > tfoot > tr > th:last-child, .table-border-right > thead > tr > td:last-child, .table-border-right > tbody > tr > td:last-child, .table-border-right > tfoot > tr > td:last-child {
-    border-right: 0px; }
-
-.table-no-bmargin {
-  margin-bottom: 0; }
-
-.table-striped > thead:first-child > tr:first-child > th {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd; }
-.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: white; }
+.compress {
+  margin: -10px 0; }
 
 /*
  * Main content
  */
 .main {
   margin-top: 1.5em;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  z-index: 0; }
   @media (min-width: 768px) {
     .main {
       padding-right: 0px;
@@ -3986,6 +4017,27 @@ section {
   margin-top: -75px;
   visibility: hidden; }
 
+#float_nav_wrap {
+  position: fixed;
+  right: 2em;
+  -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  padding: 0; }
+
+.table-border-right > thead > tr > th, .table-border-right > tbody > tr > th, .table-border-right > tfoot > tr > th, .table-border-right > thead > tr > td, .table-border-right > tbody > tr > td, .table-border-right > tfoot > tr > td {
+  border-right: 1px solid #ddd; }
+  .table-border-right > thead > tr > th:last-child, .table-border-right > tbody > tr > th:last-child, .table-border-right > tfoot > tr > th:last-child, .table-border-right > thead > tr > td:last-child, .table-border-right > tbody > tr > td:last-child, .table-border-right > tfoot > tr > td:last-child {
+    border-right: 0px; }
+
+.table-no-bmargin {
+  margin-bottom: 0; }
+
+.table-striped > thead:first-child > tr:first-child > th {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd; }
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: white; }
+
 .overlay-wrap {
   position: relative; }
   .overlay-wrap .overlay {
@@ -3999,3 +4051,20 @@ section {
 
 .password-reset {
   margin-bottom: 15px; }
+
+.bg-strap-stars {
+  background: #47b8e5;
+  background-image: url("../img/stars-bg.png"), -moz-linear-gradient(left, #67c082 0%, #47b8e5 100%);
+  background-image: url("../img/stars-bg.png"), -webkit-gradient(linear, left top, right top, color-stop(0%, #67c082), color-stop(100%, #47b8e5));
+  background-image: url("../img/stars-bg.png"), -webkit-linear-gradient(left, #67c082 0%, #47b8e5 100%);
+  background-image: url("../img/stars-bg.png"), -o-linear-gradient(left, #67c082 0%, #47b8e5 100%);
+  background-image: url("../img/stars-bg.png"), -ms-linear-gradient(left, #67c082 0%, #47b8e5 100%);
+  background-image: url("../img/stars-bg.png"), linear-gradient(to right, #67c082 0%, #47b8e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#67c082', endColorstr='#47b8e5',GradientType=1 );
+  background-size: auto 150%;
+  background-position: center; }
+
+.bg-dark-coder {
+  background-image: url("../img/dark-coder-bg.jpg");
+  background-size: auto 150%;
+  background-position: center; }

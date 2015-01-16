@@ -40,9 +40,24 @@
                 <div id="docs-body" class="container-fluid docs-body bg-gray-00">
                     <div class="row relative">
                         <!-- No Secondary Nav Layout -->
-                        <%- partial('left.ejs') %>
-                        <div class="col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 bg-gray-00 main">
-                            <article id="content" class="markdown-body entry-content"></article>
+                        <%- partial('left-home.ejs') %>
+                        <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 bg-gray-00 main">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 text-white">
+                                    <div class="col-xs-12 bg-strap-stars padded-20">
+                                        <h1 class="text-center">New to Strap?</h1>
+                                        <p>Reduce the strain of learning multiple languages and APIs. Write in JavaScript and deploy across multiple platforms including Pebble, Android Wear, Google Glass, Tizen, and Apple Watch.</p>
+                                        <a class="btn btn-primary btn-inverted" href="/guides/strapkit">Get Started</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 text-white">
+                                    <div class="col-xs-12 bg-dark-coder padded-20">
+                                    <h1 class="text-center">Already Started?</h1>
+                                    <p>Reduce the strain of learning multiple languages and APIs. Write in JavaScript and deploy across multiple platforms including Pebble, Android Wear, Google Glass, Tizen, and Apple Watch.</p>
+                                    <a class="btn btn-primary btn-inverted" href="/guides/strapkit">Guides</a><a class="btn btn-primary btn-inverted horiz-margined" href="/docs/get-started">API &amp; Docs</a>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

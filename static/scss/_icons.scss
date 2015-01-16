@@ -1,11 +1,11 @@
 
 @font-face {
     font-family: 'Brandon Grotesque Thin';
-    src: url('/fonts/brandon_thin-webfont.eot');
-    src: url('/fonts/brandon_thin-webfont.eot') format('embedded-opentype'),
-         url('/fonts/brandon_thin-webfont.woff') format('woff'),
-         url('/fonts/brandon_thin-webfont.ttf') format('truetype'),
-         url('/fonts/brandon_thin-webfont.svg#brandon_grotesquethin') format('svg');
+    src: url('../fonts/brandon_thin-webfont.eot');
+    src: url('../fonts/brandon_thin-webfont.eot') format('embedded-opentype'),
+         url('../fonts/brandon_thin-webfont.woff') format('woff'),
+         url('../fonts/brandon_thin-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_thin-webfont.svg#brandon_grotesquethin') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -13,11 +13,11 @@
 
 @font-face {
     font-family: 'Brandon Grotesque Light';
-    src: url('/fonts/brandon_light-webfont.eot');
-    src: url('/fonts/brandon_light-webfont.eot') format('embedded-opentype'),
-         url('/fonts/brandon_light-webfont.woff') format('woff'),
-         url('/fonts/brandon_light-webfont.ttf') format('truetype'),
-         url('/fonts/brandon_light-webfont.svg#brandon_grotesquelight') format('svg');
+    src: url('../fonts/brandon_light-webfont.eot');
+    src: url('../fonts/brandon_light-webfont.eot') format('embedded-opentype'),
+         url('../fonts/brandon_light-webfont.woff') format('woff'),
+         url('../fonts/brandon_light-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_light-webfont.svg#brandon_grotesquelight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -25,11 +25,11 @@
 
 @font-face {
     font-family: 'Brandon Grotesque Light Italic';
-    src: url('/fonts/brandon_light_it-webfont.eot');
-    src: url('/fonts/brandon_light_it-webfont.eot') format('embedded-opentype'),
-         url('/fonts/brandon_light_it-webfont.woff') format('woff'),
-         url('/fonts/brandon_light_it-webfont.ttf') format('truetype'),
-         url('/fonts/brandon_light_it-webfont.svg#brandon_grotesquelight_italic') format('svg');
+    src: url('../fonts/brandon_light_it-webfont.eot');
+    src: url('../fonts/brandon_light_it-webfont.eot') format('embedded-opentype'),
+         url('../fonts/brandon_light_it-webfont.woff') format('woff'),
+         url('../fonts/brandon_light_it-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_light_it-webfont.svg#brandon_grotesquelight_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -37,11 +37,11 @@
 
 @font-face {
     font-family: 'Brandon Grotesque Regular';
-    src: url('/fonts/brandon_reg-webfont.eot');
-    src: url('/fonts/brandon_reg-webfont.eot') format('embedded-opentype'),
-         url('/fonts/brandon_reg-webfont.woff') format('woff'),
-         url('/fonts/brandon_reg-webfont.ttf') format('truetype'),
-         url('/fonts/brandon_reg-webfont.svg#brandon_reg') format('svg');
+    src: url('../fonts/brandon_reg-webfont.eot');
+    src: url('../fonts/brandon_reg-webfont.eot') format('embedded-opentype'),
+         url('../fonts/brandon_reg-webfont.woff') format('woff'),
+         url('../fonts/brandon_reg-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_reg-webfont.svg#brandon_reg') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -49,11 +49,11 @@
 
 @font-face {
 	font-family: 'strap';
-	src:url('/fonts/strap.eot');
-	src:url('/fonts/strap.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/strap.svg#strap') format('svg'),
-		url('/fonts/strap.woff') format('woff'),
-		url('/fonts/strap.ttf') format('truetype');
+	src:url('../fonts/strap.eot');
+	src:url('../fonts/strap.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/strap.svg#strap') format('svg'),
+		url('../fonts/strap.woff') format('woff'),
+		url('../fonts/strap.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -70,6 +70,34 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+	content: "\e679";
+}
+
+.icon-filter:before {
+	content: "\e67a";
+}
+
+.icon-grid:before {
+	content: "\e6dd";
+}
+
+.icon-list:before {
+	content: "\e6de";
+}
+
+.icon-menu:before {
+	content: "\e6df";
+}
+
+.icon-more-vert:before {
+	content: "\e6e0";
+}
+
+.icon-more-horiz:before {
+	content: "\e6e1";
 }
 .icon-play:before {
 	content: "\e678";

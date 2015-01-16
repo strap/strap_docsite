@@ -282,3 +282,25 @@ $duration: 1.4s;
 	}
 }
 
+/**************************
+ Tooltips
+**************************/
+.tooltip {
+	font-size: 1.25em;
+	font-family: $sans;
+	white-space: nowrap;
+	@include opacity(1);
+	.tooltip-inner {
+		@include box-shadow(0 0.125em 0.25em rgba(0, 0, 0, 0.1));
+		background-color: $gray-08;
+	}
+	&.right {
+		.tooltip-arrow {
+			border-right-color: $gray-08;
+		}
+	}
+}
+
+
+
+
