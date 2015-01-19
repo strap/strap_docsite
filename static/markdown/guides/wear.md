@@ -1,7 +1,9 @@
 # Strap Kit for Android Wear
  
 Version 0.0.1
-
+<div class="col-xs-12 text-center">
+    <img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/kit-wear.png"/>
+</div>
 ## Create your Android Wear app from Strap Kit JS
 
 From your strap kit project folder

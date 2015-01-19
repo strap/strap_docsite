@@ -2,6 +2,12 @@
 
 StrapKit Pebble is the library that generates the Pebble code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the `strapkit create` command, but you can also use it ad-hoc to generate vanilla Pebble projects.
 
+<div class="col-xs-12 text-center">
+	<img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/kit-pebble.png"/>
+</div>
+
+# Get Set Up
+
 ## Checking Dependencies
 
 Strap Kit requires git, python, node, and npm at a minimum, and platform specific SDK's like Pebble and Android Wear to build for those platforms. To check your dependencies, you can run the command below (requires curl and bash). For a full run down of how to install the dependencies, go to the <a href="https://docs.straphq.com" target="_blank">full developer docs</a>.

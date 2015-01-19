@@ -63,6 +63,12 @@ a {
         }
     }
 }
+ul {
+    &.no-style {
+        list-style:none;
+        padding:0;
+    }
+}
 
 img {
     display: inline-block;

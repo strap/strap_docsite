@@ -4,13 +4,17 @@
 
 A cross platform development framework for wearables.  Strap currently supports build for Pebble and Wear.  In the future, we are working on adding support for Apple Watch and Samsung Gear.  Strap Kit will grow to be a single tool for create and integrating wearable applications across platforms.
 
+<div class="col-xs-12 text-center">
+	<img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/kit-graphic.png"/>
+</div>
+
 ### Write your first cross platform app
 
 StrapKit is the library that generates the Pebble and Wear code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the `strapkit create` command, but you can also use it ad-hoc to generate vanilla Pebble projects.
 
 ## Checking Dependencies
 
-Strap Kit requires git, python, node, and npm at a minimum, and platform specific SDK's like Pebble and Android Wear to build for those platforms. To check your dependencies, you can run the command below (requires curl and bash). For a full run down of how to install the dependencies, go to the <a href="https://docs.straphq.com" target="_blank">full developer docs</a>.
+Strap Kit requires git, python, node, and npm at a minimum, and platform specific SDK's like Pebble and Android Wear to build for those platforms. To check your dependencies, you can run the command below (requires curl and bash). For a full run down of how to install the dependencies, go to the <a href="https://docs.straphq.com/docs/strapkit">full developer docs</a>.
 
 ```bash
 $ curl http://check-config.straphq.com | bash

@@ -1,10 +1,12 @@
-# Strap Kit - Cross-Platform Tools for Wearable Developers
+# Strap Kit
 
-A cross platform development framework for wearables.
+## A cross platform development framework for wearables.
 
 Use ```strapkit``` to generate a new project with Strap Metrics built right in. More to follow.
-
-# Write your first cross platform app
+<div class="col-xs-12 text-center">
+    <img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/cross-platform.png"/>
+</div>
+## Write your first cross platform app
 
 ```javascript
 var splashPage = StrapKit.UI.Page();
