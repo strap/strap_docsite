@@ -13,7 +13,7 @@
 <li><i class="text-green icon-check"></i> explore Wear dependencies</li>
 </ul>
 
-<a class="btn btn-secondary btn-sm" data-toggle="collapse" data-target=".navbar-collapse" href="http://localhost:8000/guides/strapkit"><i class="icon-notebook"></i> Go to Guides</a>
+<a class="btn btn-secondary btn-sm" data-toggle="collapse" data-target=".navbar-collapse" href="/guides/strapkit"><i class="icon-notebook"></i> Go to Guides</a>
 
 </div>
 <div class='col-xs-12 col-sm-6'>
@@ -29,6 +29,6 @@
 <li><i class="text-green icon-check"></i> utilizing Strap Metrics for greater insights into usage</li>
 </ul>
 
-<a class="btn btn-secondary btn-sm" data-toggle="collapse" data-target=".navbar-collapse" href="http://localhost:8000/docs/strapkit"><i class="icon-api"></i> Go to Docs</a>
+<a class="btn btn-secondary btn-sm" data-toggle="collapse" data-target=".navbar-collapse" href="/docs/strapkit"><i class="icon-api"></i> Go to Docs</a>
 
 </div>
