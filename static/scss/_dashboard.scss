@@ -61,7 +61,7 @@
 	}
 	@include breaksection("mobile") {
 		height: auto;
-		top: ($navbar-height*2) - 20;
+		top: ($navbar-height*2) - 10;
 		bottom:auto;
 		padding:0;
 		text-align: center;
@@ -80,7 +80,7 @@
 				padding: 0;
 				li {
 					a {
-						height: $navbar-height - 20;
+						height: $navbar-height - 10;
 						i {
 							font-size: 30px;
 						}
