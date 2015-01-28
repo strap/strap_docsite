@@ -11,7 +11,22 @@ $ echo $JAVA_HOME
 If nothing there simply make this command: 
 ```sh
 $ sudo apt-get install openjdk-7-jdk
+$ update-alternatives --config java
 ```
+After running the above commands, you should see the path to your Java home after the colon. Copy this path, and perform the following.
+```sh
+sudo vim /etc/environment
+```
+Replace vim with your favorite command line text editor if necessary. Once the file is loaded, append the following lines to the file
+```
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+export JAVA_HOME
+```
+Exit the file, and complete the process by having bash reload /etc/environment using the following
+```sh
+source /etc/environment
+```
+
 ### Mac
 Follow this link: http://javatechig.com/java/core-java/set-java_home-environment-variable-mac-os-x
 
