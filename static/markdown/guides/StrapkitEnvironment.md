@@ -5,7 +5,7 @@ We've created a ready-to-go development environment for you to try out Strap Kit
 ##### Install Vagrant
 ```
 http://www.vagrantup.com/downloads
-````
+```
 
 ##### Install VirtualBox
 ```
