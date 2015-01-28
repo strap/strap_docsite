@@ -35,7 +35,7 @@ $ export PATH=$PATH:$ANDROID_HOME/tools
 2. Option 2 without IDE: Follow these instructions: 
 ```sh
 $ wget http://dl.google.com/android/android-sdk_r24.0.2-linux.tgz
-$ mdkir -p ~/android-sdk
+$ mkdir -p ~/android-sdk
 $ tar zxvf android-sdk_r24.0.2-linux.tgz -C ~/android-sdk/
 $ rm android-sdk_r24.0.2-linux.tgz
 $ export ANDROID_HOME=~/android-sdk/android-sdk-linux/
