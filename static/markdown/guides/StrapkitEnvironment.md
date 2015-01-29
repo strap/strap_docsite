@@ -20,7 +20,7 @@ mkdir TryStrapkit
 cd TryStrapkit
 ```
 
-<!--- FIXME: double check curl command -->
+<!---
 Use Curl, Wget, or your favorite browser to grab a copy of the Strap Kit development environment.
 ```
 curl -O http://strapkit-devbox.straphq.com/StrapKitBox
@@ -41,6 +41,13 @@ md5 StrapKitBox
 Next we'll use Vagrant to setup the Strap Kit development environment we've provided for you.
 ```
 vagrant init ./StrapKitBox
+vagrant up
+vagrant ssh
+```
+-->
+Next we'll use Vagrant to setup the Strap Kit development environment we've provided for you.
+```
+vagrant init http://strapkit-devbox.straphq.com/StrapKitBox
 vagrant up
 vagrant ssh
 ```
