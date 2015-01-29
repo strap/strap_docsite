@@ -23,7 +23,7 @@ cd TryStrapkit
 <!--- FIXME: double check curl command -->
 Use Curl, Wget, or your favorite browser to grab a copy of the Strap Kit development environment.
 ```
-curl http://strapkit-devbox.straphq.com
+curl -O http://strapkit-devbox.straphq.com/StrapKitBox
 ```
 
 After downloading the environment, you may check that the file is not corrupt by generating an MD5 hash of your copy with our ours. Run MD5 on the development environment with the following line. The generated hash should match our expected result value.
