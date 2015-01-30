@@ -53,7 +53,7 @@ vagrant up
 vagrant ssh
 ```
 
-After running the previous commands, you're now dropped into a fully functioning virtual machine pre-configured to run Strap Kit. Anything you drop into the StrapKitProjects folder will show up in the development environment. It's a good idea to just do all your work in the StrapKitProjects folder, so that it's all synced with the Vagrant environment automagically.
+After running the previous commands, you're now dropped into a fully functioning virtual machine pre-configured to run Strap Kit. Anything you drop into the StrapProjects folder will show up in the development environment. It's a good idea to just do all your work in the StrapProjects folder, so that it's all synced with the Vagrant environment automagically.
 
 From here visit the [Strap Kit Documentation](https://docs.straphq.com/docs/flow) pages to learn how to build an app using Strap Kit.
 
