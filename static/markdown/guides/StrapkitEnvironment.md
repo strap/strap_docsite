@@ -18,6 +18,7 @@ Now that you have Vagrant and VirtualBox installed, you're ready to try out Stra
 ```
 mkdir TryStrapkit
 cd TryStrapkit
+mkdir StrapProjects
 ```
 
 <!---
