@@ -2,8 +2,8 @@
 
 Version 0.0.1
 
-## JAVA_HOME
-### Linux
+## Linux
+##### SET JAVA_HOME
 Check if already set
 ```sh
 $ echo $JAVA_HOME
@@ -20,32 +20,18 @@ sudo vim /etc/environment
 Replace vim with your favorite command line text editor if necessary. Once the file is loaded, append the following lines to the file
 ```
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
-export JAVA_HOME
 ```
 Exit the file, and complete the process by having bash reload /etc/environment using the following
 ```sh
 source /etc/environment
 ```
 
-### Mac
-Follow this link: http://javatechig.com/java/core-java/set-java_home-environment-variable-mac-os-x
-
-## ADB
-### Linux
-To install:
+##### INSTALL ADB
 ```sh
 $ sudo apt-get install android-tools-adb
 ```
-### Mac
-Should be included with Android SDK. Make sure you path is set up. Follow the Android SDK instructions
 
-## ANDROID_HOME and Android SDK
-If Android SDK already installed:
-```sh
-$ export ANDROID_HOME=/path/to/sdk
-$ export PATH=$PATH:$ANDROID_HOME/tools
-```
-### Linux Installation
+##### SET ANDROID_HOME and Android SDK
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html). Check that ANDROID_HOME is in the path following the steps above.
 2. Option 2 without IDE: Follow these instructions: 
 ```sh
@@ -62,11 +48,31 @@ Note: For linux 64-bit machines, make sure you run the command:
 $ sudo apt-get install lib32stdc++6 lib32z1
 ```
 
-### Mac Installation
+##### Install appropriate SDK tools
+Assuming you set the ANDROID_HOME environmental variable and added ANDROID_HOME/tools to your PATH do the command to open up the SDK Manager: 
+```sh
+$ android update sdk --no-ui
+```
+
+## Mac
+Follow this link: http://javatechig.com/java/core-java/set-java_home-environment-variable-mac-os-x
+
+##### ADB
+Should be included with Android SDK. Make sure your path is set up. Follow the Android SDK instructions
+
+##### ANDROID_HOME and Android SDK
+If Android SDK already installed:
+```sh
+$ export ANDROID_HOME=/path/to/sdk
+$ export PATH=$PATH:$ANDROID_HOME/tools
+```
+
+If Android SDK is not already installed:
+
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html)
 2. Option 2 without IDE: Instructions coming soon...
 
-## Install appropriate SDK tools
+##### Install appropriate SDK tools
 Assuming you set the ANDROID_HOME environmental variable and added ANDROID_HOME/tools to your PATH do the command to open up the SDK Manager: 
 ```sh
 $ android sdk
