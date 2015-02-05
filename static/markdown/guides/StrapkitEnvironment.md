@@ -14,14 +14,15 @@ https://www.virtualbox.org/wiki/Downloads
 
 ### Using Strap Kit through Vagrant.
 
-Now that you have Vagrant and VirtualBox installed, you're ready to try out Strap Kit. Open your terminal, create a folder to hold your Strap Kit apps, and navigate into it.
+Now that you have Vagrant and VirtualBox installed, you're ready to try out Strap Kit.
+<!---
+Open your terminal, create a folder to hold your Strap Kit apps, and navigate into it.
 ```
 mkdir TryStrapkit
 cd TryStrapkit
 mkdir StrapProjects
 ```
 
-<!---
 Use Curl, Wget, or your favorite browser to grab a copy of the Strap Kit development environment.
 ```
 curl -O http://strapkit-devbox.straphq.com/StrapKitBox
@@ -46,14 +47,20 @@ vagrant up
 vagrant ssh
 ```
 -->
-Next we'll use Vagrant to setup the Strap Kit development environment we've provided for you.
+We'll use Vagrant to setup the Strap Kit development environment.
+After running the following commands, you'll be dropped into a fully functioning virtual machine.
 ```
-vagrant init http://strapkit-devbox.straphq.com/StrapKitBox
+vagrant init ubuntu/trusty64
 vagrant up
 vagrant ssh
 ```
 
-After running the previous commands, you're now dropped into a fully functioning virtual machine pre-configured to run Strap Kit. Anything you drop into the StrapProjects folder will show up in the development environment. It's a good idea to just do all your work in the StrapProjects folder, so that it's all synced with the Vagrant environment automagically.
+To configure the machine to run Strap Kit, run the following commands, and periodically hit 'y', and [Enter] when prompted. 
+```
+curl -O http://strapkit-devbox.straphq.com/setup_strapkit.sh && bash setup_strapkit.sh
+source ~/.bash_profile
+```
+After the install process, a Projects folder is created for you. Anything you drop into the Projects folder will exist inside both the development environment and outside. It's a good idea to just do all your work in the Projects folder, so that it's all synced with the Vagrant environment automatically. This means you can navigate to the Projects folder on your computer, and open its files in your favorite text editor just like you're used to!
 
 From here visit the [Strap Kit Documentation](https://docs.straphq.com/docs/flow) pages to learn how to build an app using Strap Kit.
 
