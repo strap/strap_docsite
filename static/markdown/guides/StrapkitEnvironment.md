@@ -15,38 +15,6 @@ https://www.virtualbox.org/wiki/Downloads
 ### Using Strap Kit through Vagrant.
 
 Now that you have Vagrant and VirtualBox installed, you're ready to try out Strap Kit.
-<!---
-Open your terminal, create a folder to hold your Strap Kit apps, and navigate into it.
-```
-mkdir TryStrapkit
-cd TryStrapkit
-mkdir StrapProjects
-```
-
-Use Curl, Wget, or your favorite browser to grab a copy of the Strap Kit development environment.
-```
-curl -O http://strapkit-devbox.straphq.com/StrapKitBox
-```
-
-After downloading the environment, you may check that the file is not corrupt by generating an MD5 hash of your copy with our ours. Run MD5 on the development environment with the following line. The generated hash should match our expected result value.
-
-##### MD5 StrapKitBox
-```
-md5 StrapKitBox
-```
-
-##### Expected MD5 Result Value
-```
-7456d1052325a038cd0fcf9b19506a76
-```
-
-Next we'll use Vagrant to setup the Strap Kit development environment we've provided for you.
-```
-vagrant init ./StrapKitBox
-vagrant up
-vagrant ssh
-```
--->
 We'll use Vagrant to setup the Strap Kit development environment.
 After running the following commands, you'll be dropped into a fully functioning virtual machine.
 ```
