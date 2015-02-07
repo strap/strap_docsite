@@ -15,6 +15,12 @@ https://www.virtualbox.org/wiki/Downloads
 ### Using Strap Kit through Vagrant.
 
 Now that you have Vagrant and VirtualBox installed, you're ready to try out Strap Kit.
+At this point it's a good idea to put the env in a folder away from everything else.
+```
+mkdir TryStrap
+cd TryStrap
+```
+
 We'll use Vagrant to setup the Strap Kit development environment.
 After running the following commands, you'll be dropped into a fully functioning virtual machine.
 ```
