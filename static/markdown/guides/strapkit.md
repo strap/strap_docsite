@@ -2,15 +2,12 @@
 
 ### Cross-Platform Tools for Wearable Developers
 
-A cross platform development framework for wearables.  Strap currently supports build for Pebble and Wear.  In the future, we are working on adding support for Apple Watch and Samsung Gear.  Strap Kit will grow to be a single tool for create and integrating wearable applications across platforms.
+A cross platform development framework for wearables.  Strap currently supports build for Pebble and Wear. Soon, we'll have support for Apple Watch and Tizen.  
 
 <div class="col-xs-12 text-center">
-	<img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/kit-graphic.png"/>
+    <img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/kit-graphic.png"/>
 </div>
 
-### Write your first cross platform app
-
-StrapKit is the library that generates the Pebble and Wear code for a StrapKit-based project. StrapKit uses this library behind the scenes as part of the `strapkit create` command, but you can also use it ad-hoc to generate vanilla Pebble projects.
 
 ## Checking Dependencies
 
@@ -44,6 +41,23 @@ $ strapkit create ./TestProject com.testproject TestProject
 strapkit platform add pebble android-wear
 ```
 
+## Write your first cross platform app
+
+```javascript
+var splashPage = StrapKit.UI.Page();
+
+var card = StrapKit.UI.Card({
+  title: 'Hello World',
+  body:'I am alive'
+});
+
+// Adds content to a Page
+splashPage.addView(card);
+
+// Tells your wearable app to show this page
+splashPage.show();
+```
+
 * Compile for all platforms.
 ```bash
 $ strapkit build
@@ -59,3 +73,10 @@ If you wish to forego using Strap kit to install your app, the compiled binary o
 $ strapkit install Phones.IP.Goes.Here
 ```
 Publish 'n' Profit!
+
+
+Use ```strapkit``` to generate a new project with Strap Metrics built right in. More to follow.
+<div class="col-xs-12 text-center">
+    <img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/cross-platform.png"/>
+</div>
+## Write your first cross platform app

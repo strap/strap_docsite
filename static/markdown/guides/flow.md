@@ -9,7 +9,7 @@ OR
 $ strapkit create ./TestProject com.testproject TestProject
 ```
 
-Write your app using the API documentation below.
+```strapkit create``` generates a starter app.js in ./TestProject/js. This is where you write your app. See <a href="/guides/examples">examples</a> for more information.
 
 ## Choose deployment platforms
 ```bash
