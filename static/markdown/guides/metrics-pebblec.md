@@ -1,18 +1,12 @@
-![alt text](https://s3.amazonaws.com/strap-assets/strap-metrics.png "Strap Metrics Logo")
+#Strap Metrics for Pebble C Apps
 
-Strap Metrics is a real-time wearable analytics platform for developers. This repository contains the Strap Metrics SDK for Pebble. Strap Metrics is currently in beta, and you'll need an account on the dashboard to use this SDK. Signup today at http://www.straphq.com/register.
+## Video Tutorial
+<a id="vid2" href="https://vimeo.com/105564698" target="_blank" class="scrollToLink">
+	<img src="https://i.vimeocdn.com/video/488396671_640.jpg">
+	<h4 class="play-video-button">Video: Installing Strap Metrics for Pebble C</h4>
+</a>
 
-
-##Strap Metrics Pebble SDK Quick Start Guide
-
-
-We now support PebbleKit JS (below), <a href="https://github.com/strap/strap_sdk_pebble/tree/master/pebblejs">Pebble.js</a>, and companion apps for <a href="https://github.com/strap/strap_sdk_pebble/tree/master/companion/iOS">iOS</a> and <a href="https://github.com/strap/strap_sdk_pebble/tree/master/companion/Android">Android</a>. Strap Metrics utilizes AppMessage to communicate between the watch and the connected phone, and tries to be smart about how often it sends data in order to preserve battery life.
-
-Getting started with the Strap Metrics SDK is pretty straightforward. These steps shouldn't take more than 5 minutes.
-
-** Note: The below shows you how to integrate with a JS project. If you have an iOS or Android companion app, check out the README in the companion directory. The rest of the steps below still apply.
-
----
+## Getting Started
 1. Login to the <a href="http://www.straphq.com/login">Strap Dashboard</a> and create an app. You'll need your App ID handy for the next step.
 2. Add the Strap Metrics SDK to your Pebble project. Run this from the src directory:
 
@@ -70,8 +64,8 @@ curl pebble-install-v2.straphq.com.s3-website-us-east-1.amazonaws.com | sh
 
 5. Initialize Strap in your Pebble code
 
-	In a typical Pebble pattern, your main() calls an init() and deinit() function. Here, you'll need to include the strap_init() and strap_deinit() functions, respectively. **Important: Your code must call app_message_open for Strap to communicate!**
-	```
+In a typical Pebble pattern, your main() calls an init() and deinit() function. Here, you'll need to include the strap_init() and strap_deinit() functions, respectively. **Important: Your code must call app_message_open for Strap to communicate!**
+```c
 	static void init(void) {
 
 	window = window_create();
@@ -106,8 +100,9 @@ curl pebble-install-v2.straphq.com.s3-website-us-east-1.amazonaws.com | sh
 	}
 	```
 
-6. Start tracking events!
-	```
+####Start tracking events!
+
+```c
 	static void select_button_click_handler(ClickRecognizerRef recognizer, void *context) {
 	// do something on your Pebble
 	strap_log_event("/select");

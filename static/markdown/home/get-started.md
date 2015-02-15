@@ -29,7 +29,6 @@
 <a class="btn btn-secondary btn-sm" data-toggle="collapse" data-target=".navbar-collapse" href="/guides/strapkit"><i class="icon-notebook"></i> Go to Guides</a>
 
 </div>
-
 <a class="btn btn-secondary btn-sm vert-margined" data-toggle="collapse" data-target=".navbar-collapse" href="/docs/strapkit"><i class="icon-api"></i> Go to Docs</a>
 
 </div>
