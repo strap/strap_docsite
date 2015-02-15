@@ -9,5 +9,5 @@ A cross platform development framework for wearables.  Strap currently supports 
 
 </div>
 <p class="text-center">
-<a class="btn btn-primary" href="/guides/gettingstarted">Get Started</a>
+<a class="btn btn-primary" href="/guides/kit-gettingstarted">Get Started</a>
 </p>
