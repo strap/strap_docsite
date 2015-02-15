@@ -1,4 +1,4 @@
-# Strap Metrics
+# Metrics for Strap Kit
 With Strap Kit JS, adding Strap Metrics to your app is a breeze.
 <div class="col-xs-12 text-center">
     <img class="img-responsive text-center col-sm-offset-2 col-xs-12 col-sm-8" src="/img/metrics-graphic-2.png"/>
