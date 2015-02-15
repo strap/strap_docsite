@@ -1,39 +1,29 @@
-
-/*******************************************************************
-
-This chunk is to fix Bootstrap so that the Markdown output looks good
-
-*******************************************************************/
-
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  font-size: 15px;
-  line-height: 150%;
+/* MARKDOWN TABLE STYLES -scald */
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
 }
 
-xmp, textarea {
-  display: none;
+table th {
+  font-weight: bold;
 }
 
-h1,h2,h3,h4 {
-  margin: 15px 0;
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
 }
 
-pre {
-  margin: 20px 0;
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
 }
 
-img {
-  margin: 10px 0;
-}
-
-.navbar {
-  z-index: 1;
-}
-
-.table {
-  width: auto;
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
 }
 
 /*******************************************************************
@@ -96,4 +86,3 @@ li.L3,
 li.L5,
 li.L7,
 li.L9 { background: #eee }
-
