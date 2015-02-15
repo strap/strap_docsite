@@ -1,5 +1,9 @@
 # Getting Started
 
+## Use the VM
+
+We've created a virtual machine with Vagrant which contains all of the dependencies you need to get started quickly. For more information, check out <a href="/guides/kit-vm">Using the VM</a>. Otherwise, you can install the dependencies locally by following the guide below.
+
 ## System Requirements
 
 Strap Kit requires git, python, node, and npm at a minimum, and platform specific SDK's like Pebble and Android Wear to build for those platforms. To check your dependencies, you can run the command below.
@@ -25,6 +29,7 @@ For Android Wear, you'll need to follow these steps for Strap Kit to build and d
 
 ### JAVA_HOME
 #### Linux
+
 Check if already set
 ```sh
 $ echo $JAVA_HOME
@@ -32,31 +37,36 @@ $ echo $JAVA_HOME
 If nothing there simply make this command:
 ```sh
 $ sudo apt-get install openjdk-7-jdk
+$ update-alternatives --config java
 ```
 #### Mac
 Follow this link: http://javatechig.com/java/core-java/set-java_home-environment-variable-mac-os-x
 
 ### ADB
 #### Linux
-To install:
 ```sh
 $ sudo apt-get install android-tools-adb
 ```
+
 #### Mac
-Should be included with Android SDK. Make sure you path is set up. Follow the Android SDK instructions
+Should be included with Android SDK. Make sure you path is set up. Follow the Android SDK instructions.
 
 ### ANDROID_HOME and Android SDK
-If Android SDK already installed:
+#### Linux
+
+#### If Android SDK Already installed
 ```sh
-$ export ANDROID_HOME=/path/to/sdk
+$ export ANDROID_HOME=~/android-sdk/android-sdk-linux/
 $ export PATH=$PATH:$ANDROID_HOME/tools
 ```
-#### Linux Installation
+
+
+#### Otherwise, get the Android SDK
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html). Check that ANDROID_HOME is in the path following the steps above.
 2. Option 2 without IDE: Follow these instructions:
 ```sh
 $ wget http://dl.google.com/android/android-sdk_r24.0.2-linux.tgz
-$ mdkir -p ~/android-sdk
+$ mkdir -p ~/android-sdk
 $ tar zxvf android-sdk_r24.0.2-linux.tgz -C ~/android-sdk/
 $ rm android-sdk_r24.0.2-linux.tgz
 $ export ANDROID_HOME=~/android-sdk/android-sdk-linux/
@@ -68,16 +78,25 @@ Note: For linux 64-bit machines, make sure you run the command:
 $ sudo apt-get install lib32stdc++6 lib32z1
 ```
 
-#### Mac Installation
+#### Mac
 1. Option 1 with IDE: Download [Android Studio](http://developer.android.com/sdk/index.html)
 2. Option 2 without IDE: Instructions coming soon...
 
 ### Install appropriate SDK tools
 Assuming you set the ANDROID_HOME environmental variable and added ANDROID_HOME/tools to your PATH do the command to open up the SDK Manager:
+#### If you installed the IDE
 ```sh
-$ android sdk
+$ android update sdk
 ```
-You need to install or update the following packages from the SDK Manager:
+#### Command line only
+
+To install the Android packages from the command line, first use ```android list sdk``` to get a list of available packages, then pass in the indexes to ```update``` to match the required packages below. Or omit ```--filter``` to download all packages (warning, this is a large download).
+```sh
+$ android list sdk
+$ android update sdk --no-ui --filter 1,2,3,4,...
+```
+
+#### Required packages
 
 1. Tools > Android SDK Tools
 2. Tools > Android SDK Platform-tools
