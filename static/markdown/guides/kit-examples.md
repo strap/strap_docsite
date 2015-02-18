@@ -289,3 +289,10 @@ StrapKit.HttpClient({
     }
 );
 ```
+
+## More Examples
+
+We're building a "best of" repo to showcase great Strap Kit apps from the community. Submit a pull request if you'd like us to include yours!
+<p>
+<a class="btn btn-default" href="https://github.com/strap/strapkit_samples" target="_blank"><i class="icon icon-github"></i> More Examples</a>
+</p>
