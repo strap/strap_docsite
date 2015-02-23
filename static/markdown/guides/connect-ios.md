@@ -1,40 +1,78 @@
 # Strap Connect for iOS
 
+Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
+
+## Setup
+
+1. Get the connect bundle, a read key, and a write key from your Strap account manager.
+1. Unzip into your desired location, possibly within your application source.
+1. Add to your build target.
+  1. Select your build target
+  1. Select "Build Phases"
+  1. Expand "Link Binary With Libraries"
+  1. Click "+" -> "Add Other"
+  1. Navigate to and select "StrapConnect.framework"
+  1. When finished, your build phases should be similar to the below
+  ![](https://cldup.com/uGPeb5_9CT.png)
+
 ## Getting Started
 
-You'll need the Connect library for iOS, a **read token**, and a **write token**. If you don't have those, contact your account manager or email support@straphq.com.
-
-### Include strap-connect.a in your XCode project.
-
-Libraries can be added in XCode by navigating in project settings to General->Linked Frameworks and Libraries
-
-<img src="https://www.dropbox.com/s/1grgujgejqlrj5l/Screenshot%202015-02-16%2011.34.05.png?dl=1"/>
-
-### Add StrapConnect.h to your Xcode project.
-
-Add the header file wherever you will need it in your project structure.
-
-<img src="https://www.dropbox.com/s/nd6yhv06ihe2xys/Screenshot%202015-02-16%2011.37.41.png?dl=1"/>
-
-### Import StrapConnect.h in the implementation which contains your logic.
-
-<img src="https://www.dropbox.com/s/36irxpp4qjjaivx/Screenshot%202015-02-16%2011.38.44.png?dl=1"/>
-
-### Instantiate StrapConnect wherever you'd like to present the user a list of possible connections:
+Include the StrapConnect header file
 
 ```objective-c
-NSDictionary * connect_params = @{
-						@"readToken":@"abc123xyz",
-						@"writeToken":@"abc123xyz",
-						@"userGUID":@"A27DDFC2-A483-4C2A-AFFC-0379CF3CA935"
-						};
-
-[StrapConnect getConnectionsList:connect_params];
-
+#import <StrapConnect/StrapConnect.h>
 ```
 
-When you call getConnectionsList, a web view will be loaded which gives the user a list of available connections to choose from. The web view handles the device activation (or deactivation) automatically by facilitating an OAuth workflow on the server side.
+(Optional) Implement the `ConnectDelegate` protocol
 
-### Retrieve user activity
+```objective-c
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,ConnectDelegate>
+
+@property (strong, nonatomic) Connect *connect;
+
+@end
+```
+
+Initialize a `Connect` instance.  Here we assume the calling class is a `ConnectDelegate`.
+
+```objective-c
+
+// Initialize connect
+self.connect = [[Connect alloc] initWithWriteToken:@"yourWriteToken" readToken:@"yourReadToken" guid:@"userGUID"];
+
+// Whether to show confirmation dialog before loading platform list
+[self.connect setShowDialog:YES];
+
+// Root navigation controller to push service list controller onto
+[self.connect setController:self.navigationController];
+
+// Provide delegate to be notified of connected status
+[self.connect setDelegate:self];
+```
+
+Launch AuthController to display platform list / allow user to connect a fitness device.
+
+```objective-c
+[self.connect launchAuthController];
+```
+
+Fetch the current user's latest aggregate fitness data.
+
+```objective-c
+
+// Fetch data
+[_connect getDailyInfoWithCallback:^(NSDictionary *data, NSError *err) {
+    // Using a block here as callback
+}];
+```
+
+Should a user elect to disconnect a fitness device, perform the following.
+
+```objective-c
+[self.connect disconnect];
+```
+
+## Retrieve user activity
 
 To retrieve activity for a user, follow the guidance in the <a href="/guides/connect-api">Connect API Reference</a>.
