@@ -24,6 +24,14 @@ $(window).ready(function() {
     });
 });
 
+function toogleMenu(target) {
+    $(".menu-part").hide()
+    console.log(target);
+    if(target) {
+        $("#menu-"+target).show();
+    }
+}
+
 //gran the .md file from the server
 function load_page() {
 
@@ -47,6 +55,13 @@ function load_page() {
                 clear_float();
             }
         });
+
+       var tt = page.split("-");
+       console.log(tt)
+       if(tt[0]) {
+        toogleMenu(tt[0])
+       }
+
     } else {
         //Missing values - less likely...
         $("#content").html(marked(error));
