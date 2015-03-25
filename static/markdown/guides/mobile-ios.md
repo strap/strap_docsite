@@ -1,4 +1,4 @@
-# Strap Connect for iOS
+# Strap for iOS
 
 Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
 
