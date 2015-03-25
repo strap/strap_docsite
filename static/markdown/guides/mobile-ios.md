@@ -1,10 +1,10 @@
-# Strap for iOS
+# iOS > Strap Mobile SDK
 
 Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
 
 ## Setup
 
-1. Get the connect bundle, a read key, and a write key from your Strap account manager.
+1. Download the framework bundle [https://s3.amazonaws.com/strap-libs/StrapConnect.zip](https://s3.amazonaws.com/strap-libs/StrapConnect.zip)
 1. Unzip into your desired location, possibly within your application source.
 1. Add to your build target.
   1. Select your build target
@@ -15,7 +15,7 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
   1. When finished, your build phases should be similar to the below
   ![](https://cldup.com/uGPeb5_9CT.png)
 
-## Getting Started
+# Getting Started
 
 Include the StrapConnect header file
 
@@ -57,7 +57,7 @@ Launch AuthController to display platform list / allow user to connect a fitness
 [self.connect launchAuthController];
 ```
 
-Fetch the current user's latest aggregate fitness data.
+Fetch the current user's latest aggregate fitness data by interval.
 
 ```objective-c
 
@@ -67,12 +67,40 @@ Fetch the current user's latest aggregate fitness data.
 }];
 ```
 
+```objective-c
+
+// Fetch data
+[_connect getWeeklyInfoWithCallback:^(NSDictionary *data, NSError *err) {
+    // Using a block here as callback
+}];
+```
+
+```objective-c
+
+// Fetch data
+[_connect getMonthlyInfoWithCallback:^(NSDictionary *data, NSError *err) {
+    // Using a block here as callback
+}];
+```
+
+Fetch activity for single day.
+
+```objective-c
+[_connect getActivityOnDate:@"2015-03-03" withCallback:^(NSArray *data, NSError *err) {
+    // Do something with data
+}];
+```
+
+Fetch activity for multiple days.
+
+```objective-c
+[_connect getActivityFromDate:@"2015-03-03" toDate:@"2015-03-08" withCallback:^(NSArray *data, NSError *err) {
+    // Do something with data
+}];
+```
+
 Should a user elect to disconnect a fitness device, perform the following.
 
 ```objective-c
 [self.connect disconnect];
 ```
-
-## Retrieve user activity
-
-To retrieve activity for a user, follow the guidance in the <a href="/guides/connect-api">Connect API Reference</a>.
