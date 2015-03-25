@@ -1,7 +1,3 @@
-# Getting Started with Strap
-
-Strap allows developers to easily integrate wearables into their existing mobile applications, enabling powerful new connections from fitness and health data to existing business logic.
-
 ## Mobile SDKs
 
 Developers integrate our SDK into mobile apps to enable access to an end user's wearable or fitness data. Mobile SDKs are currently available for iOS and Android applications.
@@ -9,12 +5,6 @@ Developers integrate our SDK into mobile apps to enable access to an end user's 
 
 <a class="btn btn-primary" href="/guides/mobile-ios"><i class="icon icon-iOS"></i> iOS</a>
 <a class="btn btn-primary" href="/guides/mobile-android"><i class="icon icon-android"></i> Android</a>
-
-## Reports API
-
-The reports API allows you to retrieve data related to a user's connected devices.
-
-<p><a class="btn btn-primary" href="/guides/api-strap"><i class="icon icon-api"></i> API Docs</a></p>
 
 
 ## Server SDKs
@@ -27,4 +17,3 @@ Developers integrate our SDK into server applications to enable access to an end
 <a class="btn btn-primary" href="/guides/sdk-php"> PHP</a>
 <a class="btn btn-primary" href="/guides/sdk-ruby">Ruby</a>
 <a class="btn btn-primary" href="/guides/sdk-python"> Python</a>
-

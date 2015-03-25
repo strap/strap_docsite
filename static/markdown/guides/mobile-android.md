@@ -1,4 +1,4 @@
-# Strap Connect for Android
+# Strap for Android
 
 Strap provides an `aar` bundle for integrating existing android applications with the Strap API.
 
@@ -26,7 +26,7 @@ Initialize `Connect` instance.  Here, it is assumed that the caller implements t
 
 ```java
 
-// Initialize Connect
+// Initialize
 c = new Connect.Builder(this, this)
         .setAppName("your_app_name")
         .setWriteToken("your_write_token")
@@ -69,7 +69,3 @@ Allow disconnect.
 ```java
 c.disconnect();
 ```
-
-## Retrieve user activity
-
-To retrieve activity for a user, follow the guidance in the <a href="/guides/connect-api">Connect API Reference</a>.
