@@ -42,7 +42,6 @@ function load_page() {
     //just do a check to make sure we have these...  We should never not have them
     if (section && page) {
         $.ajax({
-            //url: "/markdown/"+section+"/" + page + ".md",
             url: "/docfile/" + section + "/" + page,
             success: function (data) {
                 //set the page content and send it thru the marked() library
