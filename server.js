@@ -48,10 +48,7 @@ app.get('/docfile/:section/:page', function (req, res) {
         url = docsMap[section][page];
         request.get(url,function(err,data){
             if(!err){
-                // fallback ti locally hosted docs if dynamic lookup failed
-                var fileName = page + ".md";
-                var filepath = 'static/markdown/guidesBACKUP/'+fileName;
-                res.sendfile(filepath);
+                res.send(data.body);
             }else{
                 // send message to be displayed to user
                 res.send("# No Documentation found.");
