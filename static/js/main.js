@@ -1,12 +1,11 @@
-
 //Setup from global and stuff...
-var url = {}
-    , section = ""
-    , page = ""
-    , error = "";
+var url = {},
+    section = "",
+    page = "",
+    error = "";
 
 //Get everything rolling
-$(window).ready(function() {
+$(window).ready(function () {
 
 
     $('[data-toggle="tooltip"]').tooltip();
@@ -18,49 +17,50 @@ $(window).ready(function() {
     //Load and store the error content for missing files
     $.ajax({
         url: "/markdown/error.md",
-        success: function(data) {
+        success: function (data) {
             error = data;  //set result on global error 
         }
     });
 });
 
-function toogleMenu(target) {
-    $(".menu-part").hide()
-    console.log(target);
-    if(target) {
-        $("#menu-"+target).show();
+function toggleMenu(target) {
+    $(".menu-part").hide();
+    //console.log(target);
+    if (target) {
+        $("#menu-" + target).show();
     }
 }
 
-//gran the .md file from the server
+//grab the .md file from the server
 function load_page() {
 
     //Set some info and defaults
-    url = $.url();
-    section = url.segment(1) || "home";
-    page = url.segment(2) || "get-started";
+    var url = $.url();
+    var section = url.segment(1) || "home";
+    var page = url.segment(2) || "get-started";
 
     //just do a check to make sure we have these...  We should never not have them
     if (section && page) {
         $.ajax({
-            url: "/markdown/"+section+"/" + page + ".md",
-            success: function(data) {
+            //url: "/markdown/"+section+"/" + page + ".md",
+            url: "/docfile/" + section + "/" + page,
+            success: function (data) {
                 //set the page content and send it thru the marked() library
                 $("#content").html(marked(data));
                 crawl_jumps();
             },
-            error: function() {
+            error: function () {
                 //Missing file
                 $("#content").html(marked(error));
                 clear_float();
             }
         });
 
-       var tt = page.split("-");
-       console.log(tt)
-       if(tt[0]) {
-        toogleMenu(tt[0])
-       }
+        var tt = page.split("-");
+        //console.log(tt);
+        if (tt[0]) {
+            toggleMenu(tt[0])
+        }
 
     } else {
         //Missing values - less likely...
@@ -69,24 +69,24 @@ function load_page() {
     }
 
     //Do some hiding stuff
-    if(section == "home") {
+    if (section == "home") {
         //hide the left menu
         $("#menu").hide();
     } else {
         //Show the left menu
         $("#menu").show();
         $("#menu").children().hide();
-        $("#"+section).show();
+        $("#" + section).show();
     }
 }
 
 //crawl across the links in the menu and plug them into the pushState stuff
 function activate_menu() {
-    $("#sidebar_nav li a").click(function() {
-    history.pushState({}, '', $(this).attr("href"));
-    load_page();    //Set the page content
-    return false;
-  });
+    $("#sidebar_nav li a").click(function () {
+        history.pushState({}, '', $(this).attr("href"));
+        load_page();    //Set the page content
+        return false;
+    });
 }
 
 //Remove all the content from the floating right menu
@@ -97,16 +97,16 @@ function clear_float() {
 
 //run across the <h2>'s from md content and turn them into floating menu jumps
 function crawl_jumps() {
-    
+
     clear_float();
 
     var set = [];
     var d = 0;
-    $("#content h2").each(function() {
+    $("#content h2").each(function () {
         var t = $(this).text();
-        var id = "jump"+d;
-        $(this).attr("id",id).addClass("anchor");
-        $("#float_nav").append("<li><a href=\"#"+id+"\">"+t+'</a></li>');
+        var id = "jump" + d;
+        $(this).attr("id", id).addClass("anchor");
+        $("#float_nav").append("<li><a href=\"#" + id + "\">" + t + '</a></li>');
         d++;
     });
 }
