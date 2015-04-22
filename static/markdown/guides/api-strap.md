@@ -1,4 +1,4 @@
-# Retrieving User Data
+# API > Retrieving User Data
 
 ## Authentication
 
