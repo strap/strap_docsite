@@ -37,24 +37,24 @@
 
             <%- partial('header.ejs') %>
 
-            <div class="topspacer">
+          <div class="topspacer">
             <div id="docs-body" class="container-fluid docs-body bg-gray-00">
                 <div class="row relative">
-                    <!-- No Secondary Nav Layout -->
-               <%- partial('left.ejs',{home: home}) %>
-               <%- partial('menu.ejs') %>
-               <% if(index) { %>
-                  <%- partial('index.ejs') %>
-                <% } else { %>
-                   <%- partial('basic.ejs',{home: home}) %>
-                <% } %>
+                  <!-- No Secondary Nav Layout -->
+                  <%- partial('left.ejs',{home: home}) %>
+                  <%- partial('menu.ejs') %>
+                  <% if(index) { %>
+                    <%- partial('index.ejs') %>
+                  <% } else { %>
+                     <%- partial('basic.ejs',{home: home}) %>
+                  <% } %>
 
-                     </div>
                 </div>
             </div>
+          </div>
 
             <!-- /.main-content -->
-        </div>
+      </div>
     </div>
 
     <script src="/js/jquery.min.js"></script>

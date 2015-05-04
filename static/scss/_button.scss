@@ -18,7 +18,7 @@
 	}
 	&:focus {
 		outline:0;
-		@include box-shadow(0 0 0 5px $trans-black);
+		//@include box-shadow(0 0 0 5px $trans-black);
 	}
 	&.disabled, &[disabled], fieldset[disabled] & {
 	    cursor: not-allowed;

@@ -1,11 +1,22 @@
 .navbar-home {
 	.navbar {
+		top: 0;
 		border:0;
 		height: $navbar-height;
+		.row {
+			margin:0;
+		}
+		.navbar-header-wrap {
+			margin:0;
+			padding:0;
+		}
 		.navbar-header {
+			background-color: $white;
 			.navbar-brand {
-				padding: 0.5em 0;
-				height: 65px;
+				padding: 0.5em;
+				height: 64px;
+				font-size: 20px;
+  				line-height: 22px;
 				@include breakpoint("tablet") {
 					height:$navbar-height;
 				}
@@ -15,9 +26,9 @@
 			}
 			.navbar-toggle {
 				border:none;
-				margin-top:0;
+				margin-top:0.25em;
 				margin-bottom:0;
-				padding: 25px 10px;
+				float:right;
 				.icon-bar {
 					background-color: $strap-main;
 					height: 1px;
@@ -31,6 +42,35 @@
 				&:focus, &:hover {
 					background:none;
 				}
+			}
+		}
+		.dropdown {
+			padding:0.5em 0;
+		}
+		.btn-icon {
+			margin: 0 4px;
+			vertical-align: middle;
+			padding: 0.25em;
+			font-size: 1.75em;
+			background: $white;
+			line-height:0.9;
+			height:auto;
+			float:none;
+			@include transition(all 0.3s ease-in-out);
+			i {
+				color: $gray-04;
+				height:auto;
+				font-size:1em;
+				line-height:1;
+			}
+			&:hover, &:active, &:focus {
+				background: $gray-00;
+				i {
+					color: $strap-main;
+				}
+			}
+			&:first-child {
+				margin-left: 0;
 			}
 		}
 		.navbar-collapse {
@@ -85,13 +125,16 @@
 			}
 
 			.navbar-toggle {
-				margin-top:1em;
-				font-size: 0.5em;
+				margin-top:0.5em;
+				font-size: 0.75em;
 				padding: 1em;
 				@include border-radius(3em);
 				z-index: $navbar-toggle-z-index;
 				background-color:$white;
 				color: $gray;
+				position: absolute;
+				top: 0;
+				right:0;
 				&:hover, &:focus, &:active {
 					color: $strap-main-hover;
 					border-color: $strap-main-hover;
