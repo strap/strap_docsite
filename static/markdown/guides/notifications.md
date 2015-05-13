@@ -15,9 +15,9 @@ The Trigger notification is delivered as a JSON-based POST from our servers to t
 #### POST Body
 ```
 {
-    "trigger": "key-of-trigger", // Key for the trigger
-    "triggerID": "qwesdf23f",    // Trigger ID in Strap System
-    "projectId": "wewfesdqwer",  // Project ID in Strap System
+    "trigger": "key-of-trigger", // Trigger Key
+    "triggerID": "qwesdf23f",    // Strap Trigger ID
+    "projectId": "wewfesdqwer",  // Strap Project ID
     "users": [{
             "guid": "qwersd-wddfadfasd", // User GUID
             "report": "r78urtjhbsef" // Report ID 
