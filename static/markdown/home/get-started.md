@@ -14,7 +14,7 @@ Developers integrate our SDK into mobile apps to enable access to an end user's 
 
 The reports API allows you to retrieve data related to a user's connected devices.
 
-<p><a class="btn btn-primary" href="/guides/api-strap"><i class="icon icon-api"></i> API Docs</a></p>
+<p><a class="btn btn-primary" href="/api/api-strap"><i class="icon icon-api"></i> API Docs</a></p>
 
 
 ## Server SDKs
