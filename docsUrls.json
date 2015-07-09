@@ -1,5 +1,6 @@
 {
   "guides": {
+    "mobile-javascript": "https://raw.githubusercontent.com/strap/strap-sdk-javascript/master/README.md",
     "server-java": "https://raw.githubusercontent.com/strap/strap-sdk-java/master/README.md",
     "server-ruby": "https://raw.githubusercontent.com/strap/strap-sdk-ruby/master/README.md",
     "server-php": "https://raw.githubusercontent.com/strap/strap-sdk-php/master/README.md",
