@@ -81,6 +81,60 @@ $ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?day=2015-01-01&cou
 }]
 ```
 
+## Behavior
+Get user averages for a particular weekday.
+
+```GET``` **https://api2.straphq.com/behavior/{guid}**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| guid | The user's GUID | | Yes |
+| weekday | Day of the week ("monday", "tuesday", etc) | Today | No |
+
+#### Example Request
+```sh
+$ curl "https://api2.straphq.com/behavior/asdf-q2er-z6cv-q67r?weekday=tuesday" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Response
+```json
+{
+    "activity": {
+        "activeMinutes": 7,
+        "calories": 1029,
+        "floors": 0,
+        "nonactiveMinutes": 534,
+        "steps": 2838,
+        "updated": ""
+    },
+    "body": {
+        "bmi": 0,
+        "bodyFat": 0,
+        "weight": 63
+    },
+    "date": "2015-07-21",
+    "food": {
+        "calories": 0,
+        "carbs": 0,
+        "fat": 0,
+        "fiber": 0,
+        "protein": 0,
+        "sodium": 0,
+        "water": 0
+    },
+    "sleep": {
+        "asleep": 1092,
+        "awake": 5,
+        "duration": 1097,
+        "start": 1493
+    },
+    "timestamp": 1437496436041,
+    "type": "tuesday"
+}
+```
+
 ## Job
 Get, create, and delete segmentation jobs.
 
@@ -92,6 +146,7 @@ Get, create, and delete segmentation jobs.
 | :--- | --- | ---: | ---: |
 | id | The job ID | | No |
 | status | The job's status. Valid statuses include "open", "processing", and "done" | All | No |
+| data | If provided, the segmentation data associated with this job will be returned instead. Requires id to be set. | | No |
 
 #### Example Requests
 
