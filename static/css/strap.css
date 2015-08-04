@@ -3766,3 +3766,20 @@ section {
   background-image: url("../img/dark-coder-bg.jpg");
   background-size: auto 150%;
   background-position: center; }
+
+
+ .collapse-button {
+    display: block;
+    font-size: 12px;
+    cursor: pointer;
+    float: left;
+    width: 100%;
+ }
+
+ .collapse-button:before {
+    content: "Hide";
+ }
+
+ .collapse-button.collapsed:before {
+    content: "Show";
+ }
