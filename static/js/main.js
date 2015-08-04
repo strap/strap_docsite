@@ -7,6 +7,13 @@ var url = {},
 //Get everything rolling
 $(window).ready(function () {
 
+    hljs.initHighlightingOnLoad();
+
+    marked.setOptions({
+      highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
 
     $('[data-toggle="tooltip"]').tooltip();
 
@@ -18,7 +25,7 @@ $(window).ready(function () {
     $.ajax({
         url: "/markdown/error.md",
         success: function (data) {
-            error = data;  //set result on global error 
+            error = data;  //set result on global error
         }
     });
 });
@@ -47,6 +54,7 @@ function load_page() {
                 //set the page content and send it thru the marked() library
                 $("#content").html(marked(data));
                 crawl_jumps();
+                collapseCode();
             },
             error: function () {
                 //Missing file
@@ -77,6 +85,7 @@ function load_page() {
         $("#menu").children().hide();
         $("#" + section).show();
     }
+
 }
 
 //crawl across the links in the menu and plug them into the pushState stuff
@@ -110,3 +119,38 @@ function crawl_jumps() {
     });
 }
 
+function collapseCode() {
+
+    $('code').parent().each(function() {
+
+        var codeClass = $(this).find('code').attr('class');
+
+        if(codeClass) { // If class is set, we have a code block (not inline)
+
+            var button = $('<a/>')
+                        .addClass('collapse-button')
+                        .on('click', function(e) {
+                            var code = $(this).parent().find('code');
+
+                            if(code.is(':visible')) {
+                                $(this).addClass('collapsed');
+                                code.slideUp();
+                            } else {
+                                $(this).removeClass('collapsed');
+                                code.slideDown();
+                            }
+
+                            e.preventDefault();
+                        });
+
+            if(codeClass && codeClass.indexOf("lang-json") >= 0) {
+                button.addClass('collapsed');
+                $(this).find('code').slideUp();
+            }
+
+            $(this).prepend(button);
+
+        }
+    });
+
+}
