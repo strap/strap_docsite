@@ -82,7 +82,7 @@ $ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?day=2015-01-01&cou
 ```
 
 ## Behavior
-Get user averages for a particular weekday.
+Get user's behavior profile for a weekday.
 
 ```GET``` **https://api2.straphq.com/behavior/{guid}**
 
@@ -91,7 +91,7 @@ Get user averages for a particular weekday.
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
 | guid | The user's GUID | | Yes |
-| weekday | Day of the week ("monday", "tuesday", etc) | Today | No |
+| weekday | Day of the week ("monday", "tuesday", etc) | Defaults to today  | No |
 
 #### Example Request
 ```sh
@@ -145,7 +145,7 @@ Get, create, and delete segmentation jobs.
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
 | id | The job ID | | No |
-| status | The job's status. Valid statuses include "open", "processing", and "done" | All | No |
+| status | The job's status. Valid statuses include "open", "processing", and "done" | All statuses | No |
 | data | If provided, the segmentation data associated with this job will be returned instead. Requires id to be set. | | No |
 
 #### Example Requests
@@ -191,7 +191,7 @@ $ curl "https://api2.straphq.com/job?status=done" --header "x-auth-token: abc123
 | :--- | --- | ---: | ---: |
 | name | The name of the job | | Yes |
 | description | A description of the job | | No |
-| guids | Array of user GUIDs | All | No |
+| guids | Array of user GUIDs | All GUIDs | No |
 | startDate | Start date of the reports to segment | Beginning of time | No |
 | endDate | End date of the reports to segment | End of time | No |
 | notificationURL | URL to notify when the job's status updates | | No |
@@ -497,8 +497,96 @@ $ curl "https://api2.straphq.com/report/xyz123456789" --header "x-auth-token: ab
 }
 ```
 
+
+
+## Report Details
+Get a specific report's raw details.
+
+```GET``` **https://api2.straphq.com/report/{id}/raw**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| id | The report ID | | Yes |
+| type | The type of data to return. Valid types include "activity", "body", "food", "sleep", and "workout". | All types | No |
+
+#### Example Requests
+
+```sh
+$ curl "https://api2.straphq.com/report/xyz123456789/raw" --header "x-auth-token: abc123xyz"
+$ curl "https://api2.straphq.com/report/xyz123456789/raw?type=activity" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Response
+```json
+[
+    {
+        "details": {
+            "date": 20150805.0,
+            "details": {
+                // Platform specific details
+                // ...
+            }
+        },
+        "id": "abc987654321",
+        "reportId": "xyz123456789",
+        "summary": {
+            // ...
+        },
+        "timestamp": 1438774074030.0,
+        "type": "activity"
+    }
+    // ...
+]
+```
+
+## Segmentation
+Get the segmentation report for the project.
+
+```GET``` **https://api2.straphq.com/segmentation**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| date | The date for which the segmentation data is created (YYYY-MM-DD). | Today's date | No |
+| period | The period over which the segmentation data is created. Valid periods include "1day", "7day", and "30day". | 1day | No |
+
+#### Example Requests
+```sh
+$ curl "https://api2.straphq.com/segmentation" --header "x-auth-token: abc123xyz"
+$ curl "https://api2.straphq.com/segmentation?date=2015-07-01&period=7day" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Respsonse
+```json
+    "activity": [  // activity, body, food, or sleep
+        {
+            "averages": {
+                // ...
+            },
+            "chart": [
+                {
+                    "data": [
+                        [
+                            "2015-08-04",
+                            30
+                        ]
+                    ],
+                    "human": "Activeminutes",
+                    "name": "activeMinutes"
+                }
+                // ...
+            ],
+            "clusterId": "0"
+        }
+        // ...
+    ]
+```
+
 ## Today
-Get all user data today by page or get user activity for today
+Get all user data today by page or get user activity for today.
 
 ```GET``` **https://api2.straphq.com/today**
 
