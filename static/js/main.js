@@ -76,7 +76,7 @@ function load_page() {
     }
 
     //Do some hiding stuff
-    if (section == "home") {
+    if (section == "home" || section == "security") {
         //hide the left menu
         $("#menu").hide();
     } else {
