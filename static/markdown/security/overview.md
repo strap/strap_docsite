@@ -172,9 +172,7 @@ Strap ensures that appropriate backup and system recovery procedures are in plac
 
 ## 8. Contacts for Further Information
 
-| **Name** | **Title** | **Email** |
+| **Name** | **Email** |
 | --- | --- | --- |
-| Steve Caldwell | Chief Executive Officer | [steve@straphq.com](mailto:steve@straphq.com) |
-| Patrick Henshaw | Chief Operations Officer | [patrick@straphq.com](mailto:patrick@straphq.com) |
-| Brian Powell | VP of Engineering | [brian@straphq.com](mailto:brian@straphq.com) |
+| Support | [support@straphq.com](mailto:support@straphq.com) |
 
