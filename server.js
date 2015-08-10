@@ -4,6 +4,7 @@
 
 var fs = require('fs'),
     config = require('./package.json'),
+    _ = require('lodash')
     express = require('express'),
     engine = require('ejs-locals'),
     app = express();
@@ -32,9 +33,11 @@ app.get("/home", function(req, res) {
     res.render('layout.ejs', {index: false, home: true});
 });
 
+var nonLeft = ["security"];
+
 //Handle other Pages
 app.get('/:template/:section', function(req, res) {
-    res.render('layout.ejs', {index: false, home: false});
+    res.render('layout.ejs', {index: false, home: _.includes(nonLeft, req.params.template) });
 });
 
 app.get('/docfile/:section/:page', function (req, res) {
