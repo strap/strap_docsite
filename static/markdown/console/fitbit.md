@@ -9,7 +9,7 @@ Developer Site: https://dev.fitbit.com
 | OAuth 1.0 Application Type: | Browser |
 | OAuth 2.0 Application Type: | Client |
 | Callback URL: | https://fitbit.straphq.com/connect |
-| Default Access Type: | The number of records you want returned |
+| Default Access Type: | Read & Write |
 | Subscriber - Endpoint URL: |  https://fitbit.straphq.com/activity |
 | Subscriber - Type: |  JSON Body |
 | Subscriber - Subscriber ID: | [empty] |
