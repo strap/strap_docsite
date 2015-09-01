@@ -35,11 +35,12 @@ Include the StrapConnect header file
 ```
 
 Initialize a `Connect` instance.  Here we assume the calling class is a `ConnectDelegate`.
+Permission is an array of health types to handle;
 
 ```objective-c
 
 // Initialize connect
-self.connect = [[Connect alloc] initWithWriteToken:@"yourWriteToken" readToken:@"yourReadToken" guid:@"userGUID"];
+self.connect = [[Connect alloc] initWithWriteToken:@"yourWriteToken" readToken:@"yourReadToken" guid:@"userGUID" permissions:@[HMPermissionTypeActivity, HMPermissionTypeBody, HMPermissionTypeFood, HMPermissionTypeSleep]];
 
 // Whether to show confirmation dialog before loading platform list
 [self.connect setShowDialog:YES];
@@ -103,4 +104,57 @@ Should a user elect to disconnect a fitness device, perform the following.
 
 ```objective-c
 [self.connect disconnect];
+```
+
+# Write data
+
+Write sleep values
+```objective-c
+[self.connect writeSleepValueFromDate:self.sleepStartDate toDate:self.sleepEndDate withCallback:^(BOOL success, NSError *err) {
+    }];
+```
+
+Write food values
+```objective-c
+
+NSArray *array = @[@{@"name": @"my favourite plate"},
+@{@"type": HKQuantityTypeIdentifierDietaryEnergyConsumed, @"value": @"120", @"unit": @"cal"},
+@{@"type": HKQuantityTypeIdentifierDietaryFatTotal, @"value": @"10", @"unit": @"g"},
+@{@"type": HKQuantityTypeIdentifierDietaryProtein, @"value": @"50", @"unit": @"g"},
+@{@"type": HKQuantityTypeIdentifierDietaryFiber, @"value": @"20", @"unit": @"g"},
+@{@"type": HKQuantityTypeIdentifierDietarySodium, @"value": @"3", @"unit": @"g"}
+];
+
+[self.connect writeFoodCorrelationValue:array fromDate:self.foodDate toDate:self.foodDate withCallback:^(BOOL success, NSError *err) {
+    }];
+```
+
+Write body values
+```objective-c
+NSArray *array = @[
+@{@"type": HKQuantityTypeIdentifierBodyMassIndex, @"value": @"40", @"unit": @"count"},
+@{@"type": HKQuantityTypeIdentifierBodyFatPercentage, @"value": @"25.0", @"unit": @"%"},
+@{@"type": HKQuantityTypeIdentifierBodyMass, @"value": @"60", @"unit": @"lb"}
+];
+
+[self.connect writeBodyValues:array fromDate:[NSDate date] toDate:[NSDate date] withCallback:^(BOOL success, NSError *err) {
+    }];
+
+```
+
+# Search for a specific food
+
+Autocomplete results while typing
+```objective-c
+- (void)foodSearchAutoComplete:(NSString *)term withCallback:(void (^)(BOOL success, NSString *term, NSArray *results))cb;
+```
+
+Search for a specific term
+```objective-c
+- (void)foodSearch:(NSString *)term withCallback:(void (^)(BOOL success, NSString *term, NSArray *results)) cb;
+```
+
+Get complete food details
+```objective-c
+- (void)foodInfo:(NSString *)itemId withCallback:(void (^)(BOOL success, NSString *itemId, NSDictionary *results)) cb;
 ```
