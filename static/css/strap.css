@@ -3719,6 +3719,8 @@ section {
     #float_nav_wrap {
       position: fixed;
       right: 2em;
+      overflow: auto;
+      max-height: 82%;
       -webkit-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
       box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); } }
 

@@ -146,7 +146,6 @@ Get, create, and delete segmentation jobs.
 | :--- | --- | ---: | ---: |
 | id | The job ID | | No |
 | status | The job's status. Valid statuses include "open", "processing", and "done" | All statuses | No |
-| data | If provided, the segmentation data associated with this job will be returned instead. Requires id to be set. | | No |
 
 #### Example Requests
 
@@ -235,6 +234,22 @@ $ curl "https://api2.straphq.com/job" -X POST -H "application/json" -d '{"name":
 $ curl "https://api2.straphq.com/job/123456789" -X DELETE --header "x-auth-token: abc123xyz"
 ```
 
+## Job Data
+Get segmentation job data.
+
+```GET``` **https://api2.straphq.com/job/{id}/data**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| id | The job ID | | Yes |
+
+#### Example Requests
+
+```sh
+$ curl "https://api2.straphq.com/job/123456789/data" --header "x-auth-token: abc123xyz"
+```
 
 ## Month
 Get all user month data by page or get user activity for month
@@ -498,7 +513,6 @@ $ curl "https://api2.straphq.com/report/xyz123456789" --header "x-auth-token: ab
 ```
 
 
-
 ## Report Details
 Get a specific report's raw details.
 
@@ -540,6 +554,120 @@ $ curl "https://api2.straphq.com/report/xyz123456789/raw?type=activity" --header
     // ...
 ]
 ```
+
+## Report Food
+Get specific report's food details
+
+```GET``` **https://api2.straphq.com/report/{id}/food**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| id | The report ID | | Yes |
+
+#### Example Request
+
+```sh
+$ curl "https://api2.straphq.com/report/xyz123456789/food" --header "x-auth-token: abc123xyz"
+```
+
+
+#### Example Response
+
+```json
+[
+    {
+        "amount": "1",
+        "barcode": "null",
+        "brand": "",
+        "calcium": 10,
+        "calories": 154,
+        "carbs": 22.25,
+        "cholesterol": 0,
+        "createdAt": 1440184110,
+        "date": "2015-08-18",
+        "fat": 0.22,
+        "fiber": 0.1,
+        "id": "abc123456789",
+        "iron": 0,
+        "mealType": "lunch",
+        "monoFat": 0,
+        "name": "Frosted Shredded Wheat",
+        "polyFat": 0,
+        "potassium": 0,
+        "protein": 1.25,
+        "saturatedFat": 0.075,
+        "sodium": 161,
+        "sugar": 10,
+        "transFat": 0,
+        "unit": "single serving box (.875 oz)",
+        "unsaturatedFat": 0.15,
+        "updatedAt": 1440184110,
+        "vitaminA": 0,
+        "vitaminC": 0,
+        "water": 0
+    }
+    // ...
+]
+```
+
+
+## Report Workout
+Get specific report's workout details
+
+```GET``` **https://api2.straphq.com/report/{id}/workout**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| id | The report ID | | Yes |
+
+#### Example Request
+
+```sh
+$ curl "https://api2.straphq.com/report/xyz123456789/workout" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Response
+
+```json
+[
+    {
+        "activeMinutes": 0,
+        "avgHeartRate": 0,
+        "avgSpeed": 0,
+        "avgTemp": 0,
+        "calories": 1401,
+        "city": "",
+        "country": "",
+        "createdAt": 1439578238,
+        "date": "2015-08-14",
+        "description": "",
+        "distance": 0,
+        "elapsedTime": 0,
+        "endLoc": null,
+        "id": "xyz123456789",
+        "maxHeartRate": 0,
+        "maxSpeed": 0,
+        "movingTime": 0,
+        "name": "Run",
+        "nonactiveMinutes": 0,
+        "startLoc": [
+            "",
+            ""
+        ],
+        "startTime": 1439558329,
+        "state": "",
+        "steps": 0,
+        "type": "run",
+        "updatedAt": 1440184108
+    }
+    // ...
+]
+```
+
 
 ## Segmentation
 Get the segmentation report for the project.
@@ -715,6 +843,104 @@ $ curl "https://api2.straphq.com/today?page=5" --header "x-auth-token: abc123xyz
     }]
 }]
 ```
+
+## Trend
+Get the trend data for a specified GUID.
+
+```GET``` **https://api2.straphq.com/trend/{guid}**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| guid | A user's GUID | | Yes |
+
+#### Example Request
+
+```sh
+$ curl "https://api2.straphq.com/trend/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Response
+```json
+{
+    "activeMinutes": {
+        "dailyBottom": "Wednesday",
+        "dailyPeak": "Saturday",
+        "dailyValue": {
+            "Friday": 299.44,
+            "Monday": 203.04,
+            "Saturday": 368.36,
+            "Sunday": 302.2,
+            "Thursday": 231.72,
+            "Tuesday": 210.34615384615384,
+            "Wednesday": 193.88
+        },
+        "data": [
+            [
+                "2015-05-18",
+                262
+            ]
+            // ...
+        ],
+        "weekPeak": "weekend",
+        "weekdayValue": 227.54761904761904,
+        "weekendValue": 335.28
+    },
+    // ...
+    "credId": "abc123456789",
+    "generalTrend": {
+        "activity_steps": {
+            "change_percent_14": 0.22128629077853804,
+            "last_14": "increase",
+            "last_7": "decrease",
+            "predict_7": {
+                "2015-08-26": 9628.081119832548,
+                "2015-08-27": 11737.940722135008,
+                "2015-08-28": 12915.386991104133,
+                "2015-08-29": 15817.599926739926,
+                "2015-08-30": 13427.532862375718,
+                "2015-08-31": 10769.06579801151,
+                "2015-09-01": 11308.238733647304
+            }
+        }
+    },
+    "steps": {
+        "dailyBottom": "Wednesday",
+        "dailyPeak": "Saturday",
+        "dailyValue": {
+            "Friday": 8817.32,
+            "Monday": 6199.12,
+            "Saturday": 11562.24,
+            "Sunday": 9014.88,
+            "Thursday": 7797.166666666667,
+            "Tuesday": 6581,
+            "Wednesday": 5844.6
+        },
+        "data": [
+            [
+                "2015-05-18",
+                8694
+            ]
+            // ...
+        ],
+        "weekPeak": "weekend",
+        "weekdayValue": 7038.112,
+        "weekendValue": 10288.56
+    },
+    "weekdayTrend": {
+        "activity_activeMinutes": {
+            "Friday": {
+                "change_percent": 0,
+                "trend": "constant"
+            }
+            // ...
+        }
+        // ...
+    }
+}
+```
+
 ## Trigger
 Get a specific trigger by passing in the trigger id.
 
