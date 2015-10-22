@@ -17,6 +17,23 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
 
 # Getting Started
 
+To properly handle third party services like FitBit, your app needs to handle the custom URL scheme strapconnect-<yourWriteToken>; To do so, add these lines to your Info.plist file (assuming your write token is 12341234123412345):
+
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>strapconnect-12341234123412345</string>
+    </array>
+  </dict>
+</array>
+```
+
 Include the StrapConnect header file
 
 ```objective-c
@@ -32,6 +49,17 @@ Include the StrapConnect header file
 @property (strong, nonatomic) Connect *connect;
 
 @end
+```
+
+Implement the openURL:sourceApplication:annotation: method to let StrapConnect handle the redirects when connecting to third party services like FitBit.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+if ([[url scheme] rangeOfString:@"strapconnect"].location != NSNotFound) {
+[self.connect openURL:url];
+}
+return YES;
+}
 ```
 
 Initialize a `Connect` instance.  Here we assume the calling class is a `ConnectDelegate`.
@@ -140,6 +168,16 @@ NSArray *array = @[
 [self.connect writeBodyValues:array fromDate:[NSDate date] toDate:[NSDate date] withCallback:^(BOOL success, NSError *err) {
     }];
 
+```
+
+Write detailed food info
+```objective-c
+- (void)sendFoodInfo:(NSDictionary *)product withCallback:(void (^)(BOOL success)) cb;
+```
+
+Write workout values
+```objective-c
+- (void)sendWorkoutInfo:(NSDictionary *)workout withCallback:(void (^)(BOOL success)) cb;
 ```
 
 # Search for a specific food
