@@ -16,17 +16,29 @@ Strap provides an `aar` bundle for integrating existing android applications wit
 
   dependencies {
       compile(name:'connect', ext:'aar')
+      compile 'com.google.android.gms:play-services:7.8.0'
       compile 'com.squareup.retrofit:retrofit:1.8.0'
   }
   ```
 1. Sync your project
 
 ## Getting Started
+### Configure the Manifest
+To properly handle third party services like FitBit, your app needs to handle the custom URL scheme strapconnect-your_write_token.
+To do so, add this `intent-filter` to your entry point activity (usually `.MainActivity`) in `AndroidManifest.xml` file (assuming your write token is abc123ABC):
+```xml
+<intent-filter>
+  <action android:name="android.intent.action.VIEW" />
+  <category android:name="android.intent.category.DEFAULT" />
+  <category android:name="android.intent.category.BROWSABLE" />
+  <data android:scheme="strapconnect-abc123abc" />
+</intent-filter>
+```
+Pay attention that, even if your write token contains uppercase letters, in the `intent-filter` you must write it all in  lowercase.
 
-Initialize `Connect` instance.  Here, it is assumed that the caller implements the `ConnectDelegate` interface.
-
+### Initialize `Connect` instance.  
+Here, it is assumed that the caller implements the `ConnectDelegate` interface.
 ```java
-
 // Initialize Connect
 c = new Connect.Builder(this, this)
         .setAppName("your_app_name")
@@ -35,6 +47,15 @@ c = new Connect.Builder(this, this)
         .setShowDialog(true) // whether to ask for confirmation
         .setUserId("user_guid")
         .build();
+```
+
+To let StrapConnect handle the redirects when connecting to third party services like FitBit, in the `onCreate` event and after istantiated the `Connect` instance, add:
+```java
+Intent intent = getIntent();
+Uri data = intent.getData();
+if (data != null) {
+  c.ConnectAuthComplete(data.toString());
+}
 ```
 
 ## Managing User Connection
@@ -65,7 +86,9 @@ Allow disconnect.
 c.disconnect();
 ```
 
-## Fetch User Data By Interval
+## Fetch User Data 
+
+### By Interval
 
 Fetch user's latest report for each interval
 
@@ -107,7 +130,7 @@ c.getMonthly(new Connect.ReportCallback() {
 });
 ```
 
-## Fetch User Data By Date
+### By Date
 
 Fetch user's activity for a specific date
 
@@ -143,4 +166,51 @@ c.getActivityForRange("2015-03-15", "2015-03-17", new Connect.ActivityCallback()
         Log.e(TAG, "Failed to fetch activity");
     }
 });
+```
+
+## Add User Data
+
+Food Eated
+```java    
+Date date = new Date();
+c.addFood("Good apple", date, calories, carbs, fat, protein, fiber, sodium, water);
+```
+
+Add Sleep
+```java
+Date startDate = new Date();
+Date endDate = new Date();
+c.addSleep(Date startDate, Date endDate);
+```
+
+Body data
+```java
+c.addBody(BMI, weightKG, BFP);
+```
+
+## Food Suggestions
+To have suggestion about typical food properties there are three methods logically sequential.
+Calling activity must implement the interfaces:
+```java
+public interface FoodCallback {
+      void onSuccessAuto(List<FoodAuto> data);
+      void onSuccessSearch(FoodSearch data);
+      void onSuccessItem(FoodItem data);
+      void onError();
+}
+```
+
+To get food spelling suggestion call:
+```java
+c.getFoodAuto(term, this);
+```
+
+To get a list of possible food call:
+```java
+c.getFoodSearch(term, this);
+```
+
+To ghet details about certain food call:
+```java
+c.getFoodItem(itemId, this);
 ```
