@@ -23,14 +23,14 @@ To properly handle third party services like FitBit, your app needs to handle th
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
-  <dict>
-    <key>CFBundleTypeRole</key>
-    <string>Editor</string>
-    <key>CFBundleURLSchemes</key>
-    <array>
-      <string>strapconnect-12341234123412345</string>
-    </array>
-  </dict>
+ <dict>
+  <key>CFBundleTypeRole</key>
+  <string>Editor</string>
+  <key>CFBundleURLSchemes</key>
+  <array>
+   <string>strapconnect-12341234123412345</string>
+  </array>
+ </dict>
 </array>
 ```
 
@@ -84,6 +84,23 @@ Launch AuthController to display platform list / allow user to connect a fitness
 
 ```objective-c
 [self.connect launchAuthController];
+```
+
+Launch the Overview WebPage (to quickly show user data without writing custom implementation).
+
+```objective-c
+- (IBAction)showOverview:(id)sender {
+UIViewController *c = [self.connect overviewViewController];
+UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:c];
+UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeOverview:)];
+c.navigationItem.leftBarButtonItem = cancel;
+
+[self presentViewController:nc animated:YES completion:nil];
+}
+
+- (IBAction)closeOverview:(id)sender {
+[self dismissViewControllerAnimated:YES completion:nil];
+}
 ```
 
 Fetch the current user's latest aggregate fitness data by interval.
