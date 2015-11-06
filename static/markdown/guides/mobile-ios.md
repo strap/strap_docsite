@@ -17,20 +17,30 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
 
 # Getting Started
 
+If building against iOS9 SDK, using XCode 7, add these lines to your Info.plist file, to allow proper network handling
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+</dict>
+```
+
 To properly handle third party services like FitBit, your app needs to handle the custom URL scheme strapconnect-<yourWriteToken>; To do so, add these lines to your Info.plist file (assuming your write token is 12341234123412345):
 
 
-```xml
+```
 <key>CFBundleURLTypes</key>
 <array>
- <dict>
-  <key>CFBundleTypeRole</key>
-  <string>Editor</string>
-  <key>CFBundleURLSchemes</key>
-  <array>
-   <string>strapconnect-12341234123412345</string>
-  </array>
- </dict>
+<dict>
+<key>CFBundleTypeRole</key>
+<string>Editor</string>
+<key>CFBundleURLSchemes</key>
+<array>
+<string>strapconnect-12341234123412345</string>
+</array>
+</dict>
 </array>
 ```
 
@@ -64,6 +74,7 @@ return YES;
 
 Initialize a `Connect` instance.  Here we assume the calling class is a `ConnectDelegate`.
 Permission is an array of health types to handle;
+To properly manage overview and auth screen, is required that the controller object passed to the setController method is an instance of a UINavigationController.
 
 ```objective-c
 
@@ -78,6 +89,17 @@ self.connect = [[Connect alloc] initWithWriteToken:@"yourWriteToken" readToken:@
 
 // Provide delegate to be notified of connected status
 [self.connect setDelegate:self];
+
+// Implement required delegate methods
+- (void) onConnected {
+    ...
+}
+
+- (void) onDisconnected {
+    ...
+}
+
+
 ```
 
 Launch AuthController to display platform list / allow user to connect a fitness device.
