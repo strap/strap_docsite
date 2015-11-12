@@ -90,6 +90,11 @@ self.connect = [[Connect alloc] initWithWriteToken:@"yourWriteToken" readToken:@
 // Provide delegate to be notified of connected status
 [self.connect setDelegate:self];
 
+// Check if the user is already connected
+if ([self.connect isUserConnected]) {
+    ...
+}
+    
 // Implement required delegate methods
 - (void) onConnected {
     ...
