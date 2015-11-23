@@ -3,7 +3,19 @@
 Strap provides an `aar` bundle for integrating existing android applications with the Strap API.
 
 ## Setup
+### Register key certificate on Developer Console
+Strap library uses the Fit Api. To access to it you must register the .apk file's public certificate in the Developers Console using your Android package name and SHA-1 fingerprint.
 
+To ghet the SHA-1 fingerprint you can call
+``` keytool -exportcert -alias YOUR_CERTIFICATE_NAME -keystore YOUY_KEYSTORE -list -v ```
+
+Remember to register also the debug certificate (`YOUR_CERTIFICATE_NAME`=`androiddebugkey`, `YOUY_KEYSTORE` usually `~/.android/debug.keystore` on Linux/MacOS or `C:\Users\[USER]\.android\debug.keystore` on Windows, password `android`)
+
+Register the certificate on the Developer Console under `Add credentials` > `OAuth 2.0 client ID` choosing `Android`.
+
+More infos at [https://developers.google.com/console/help/new/?hl=en_US#installedapplications-android]
+
+### Android Studio
 1. Download the bundle [https://s3.amazonaws.com/strap-libs/connect.aar](https://s3.amazonaws.com/strap-libs/connect.aar)
 1. Move the bundle into the `libs` directory under your application module
 1. Update your module `build.gradle` to include the following
@@ -16,7 +28,7 @@ Strap provides an `aar` bundle for integrating existing android applications wit
 
   dependencies {
       compile(name:'connect', ext:'aar')
-      compile 'com.google.android.gms:play-services:7.8.0'
+      compile 'com.google.android.gms:play-services-fitness:8.3.0'
       compile 'com.squareup.retrofit:retrofit:1.8.0'
   }
   ```
@@ -67,16 +79,20 @@ boolean connected = c.isUserConnected();
 ```
 
 Launch connection activity.
-
 ```java
 c.launch();
 ```
 
 If a user successfully connects your `ConnectDelegate` implementation will be notified.
-
 ```java
 public void onConnected() {
     Log.d(TAG, "User connected!");
+}
+```
+When user updates the profile:
+```java
+public void onComplete() {
+    Log.d(TAG, "Profile update completed.");
 }
 ```
 

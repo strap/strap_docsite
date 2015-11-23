@@ -19,10 +19,10 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
 
 If building against iOS9 SDK, using XCode 7, add these lines to your Info.plist file, to allow proper network handling
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
-<key>NSAllowsArbitraryLoads</key>
+  <key>NSAllowsArbitraryLoads</key>
 <true/>
 </dict>
 ```
@@ -30,17 +30,17 @@ If building against iOS9 SDK, using XCode 7, add these lines to your Info.plist 
 To properly handle third party services like FitBit, your app needs to handle the custom URL scheme strapconnect-<yourWriteToken>; To do so, add these lines to your Info.plist file (assuming your write token is 12341234123412345):
 
 
-```
+```xml
 <key>CFBundleURLTypes</key>
 <array>
-<dict>
-<key>CFBundleTypeRole</key>
-<string>Editor</string>
-<key>CFBundleURLSchemes</key>
-<array>
-<string>strapconnect-12341234123412345</string>
-</array>
-</dict>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>strapconnect-12341234123412345</string>
+    </array>
+  </dict>
 </array>
 ```
 
@@ -100,14 +100,18 @@ if ([self.connect isUserConnected]) {
     ...
 }
 
-- (void) onDisconnected {
+- (void) onProfileUpdated {
     ...
 }
 
-
+- (void) onDisconnected {
+    ...
+}
 ```
 
-Launch AuthController to display platform list / allow user to connect a fitness device.
+Launch AuthController to display platform list / allow user to connect a fitness device; Some third party services, like FitBit, require their auth page to be opened in the external safari browser; In this case, the app will fire two delegate methods, onConnected when the user grants authorization to the service, and onProfileUpdated when the user has also filled the additional informations on the strap website.
+
+The typical workflow is then to only update the app internal status within the onConnected method, leaving the auth screen open to show the additional profile page, and to close this screen only when the last onProfileUpdated call is received.
 
 ```objective-c
 [self.connect launchAuthController];
