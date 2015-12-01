@@ -18,6 +18,7 @@ The Trigger notification is delivered as a JSON-based POST from our servers to t
     "trigger": "key-of-trigger", // Trigger Key
     "triggerID": "qwesdf23f",    // Strap Trigger ID
     "projectId": "wewfesdqwer",  // Strap Project ID
+    "date": "YYYY-MM-DD",  // Trigger Date
     "users": [{
             "guid": "qwersd-wddfadfasd", // User GUID
             "report": "r78urtjhbsef" // Report ID 
