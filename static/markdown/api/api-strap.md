@@ -20,13 +20,15 @@ Get activity for a specified user by passing in the user's GUID.
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
 | guid | The user's GUID | | Yes |
-| day | Which day you want data for (YYYY-MM-DD) | Today | No |
+| date | Which date you want data for (YYYY-MM-DD) | Today | No |
+| start | Which date you want start query for (YYYY-MM-DD) | None | No |
+| end | Which date you want end query for (YYYY-MM-DD) | None | No |
 | count | The number of records you want returned | 500 | No |
 
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?day=2015-01-01&count=1000" --header "x-auth-token: abc123xyz"
+$ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?date=2015-01-01&count=1000" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
