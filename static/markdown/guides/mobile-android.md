@@ -2,6 +2,9 @@
 
 Strap provides an `aar` bundle for integrating existing android applications with the Strap API.
 
+### Demo App
+We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
+
 ## Setup
 ### Register key certificate on Developer Console
 Strap library uses the Fit Api. To access to it you must register the .apk file's public certificate in the Developers Console using your Android package name and SHA-1 fingerprint.
@@ -14,9 +17,6 @@ Remember to register also the debug certificate (`YOUR_CERTIFICATE_NAME`=`androi
 Register the certificate on the Developer Console under `Add credentials` > `OAuth 2.0 client ID` choosing `Android`.
 
 More infos at [https://developers.google.com/console/help/new/?hl=en_US#installedapplications-android]
-
-### Demo App
-We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
 
 ### Android Studio
 1. Download the bundle [https://s3.amazonaws.com/strap-libs/connect.aar](https://s3.amazonaws.com/strap-libs/connect.aar)
