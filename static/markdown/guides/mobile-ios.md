@@ -4,7 +4,7 @@
 
 Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
 
-### Demo App
+## Demo App
 
 We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip](https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip)
 
@@ -22,7 +22,7 @@ We have a demo app avaialble for testing.  You can download it from: [https://s3
   1. When finished, your build phases should be similar to the below
   ![](https://cldup.com/uGPeb5_9CT.png)
 
-# Getting Started
+## Getting Started
 
 If building against iOS9 SDK, using XCode 7, add these lines to your Info.plist file, to allow proper network handling
 
@@ -143,6 +143,8 @@ c.navigationItem.leftBarButtonItem = cancel;
 }
 ```
 
+## Fetch User Data
+
 Fetch the current user's latest aggregate fitness data by interval.
 
 ```objective-c
@@ -191,7 +193,7 @@ Should a user elect to disconnect a fitness device, perform the following.
 [self.connect disconnect];
 ```
 
-# Write data
+## Write User Data
 
 Write sleep values
 ```objective-c
