@@ -2,7 +2,7 @@
 
 Strap provides an `aar` bundle for integrating existing android applications with the Strap API.
 
-### Demo App
+## Demo App
 We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
 
 ## Setup
@@ -194,7 +194,7 @@ It can be istantiated calling the static method `GetConnectedFragment()` and can
 private com.straphq.connect.android.ui.fragment.ConnectedFragment connectLibraryConnectedFragment = Connect.GetConnectedFragment();
 ```
 
-## Add User Data
+## Write User Data
 
 Food Eated
 ```java    
