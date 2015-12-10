@@ -4,6 +4,10 @@
 
 Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
 
+### Demo App
+
+We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip](https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip)
+
 ## Setup
 
 1. Include in your app the HealthKit and the SafariServices frameworks (the last one should be linked as "Optional" to support iOS8 devices).
@@ -17,10 +21,6 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
   1. Navigate to and select "StrapConnect.framework"
   1. When finished, your build phases should be similar to the below
   ![](https://cldup.com/uGPeb5_9CT.png)
-
-### Demo App
-
-We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip](https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip)
 
 # Getting Started
 
