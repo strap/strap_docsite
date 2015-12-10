@@ -1,9 +1,12 @@
 # iOS > Strap Mobile SDK
 
+# StrapConnect
+
 Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
 
 ## Setup
 
+1. Include in your app the HealthKit and the SafariServices frameworks (the last one should be linked as "Optional" to support iOS8 devices).
 1. Download the framework bundle [https://s3.amazonaws.com/strap-libs/StrapConnect.zip](https://s3.amazonaws.com/strap-libs/StrapConnect.zip)
 1. Unzip into your desired location, possibly within your application source.
 1. Add to your build target.
@@ -14,6 +17,10 @@ Strap provides a universal cocoa touch framework for iOS applications to integra
   1. Navigate to and select "StrapConnect.framework"
   1. When finished, your build phases should be similar to the below
   ![](https://cldup.com/uGPeb5_9CT.png)
+
+### Demo App
+
+We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip](https://s3.amazonaws.com/strap-libs/HealthMartDemo.zip)
 
 # Getting Started
 
@@ -32,7 +39,7 @@ To properly handle third party services like FitBit, your app needs to handle th
 
 ```xml
 <key>CFBundleURLTypes</key>
-<array>
+  <array>
   <dict>
     <key>CFBundleTypeRole</key>
     <string>Editor</string>
@@ -107,6 +114,8 @@ if ([self.connect isUserConnected]) {
 - (void) onDisconnected {
     ...
 }
+
+
 ```
 
 Launch AuthController to display platform list / allow user to connect a fitness device; Some third party services, like FitBit, require their auth page to be opened in the external safari browser; In this case, the app will fire two delegate methods, onConnected when the user grants authorization to the service, and onProfileUpdated when the user has also filled the additional informations on the strap website.

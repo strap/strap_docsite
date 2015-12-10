@@ -16,7 +16,7 @@ Register the certificate on the Developer Console under `Add credentials` > `OAu
 More infos at [https://developers.google.com/console/help/new/?hl=en_US#installedapplications-android]
 
 ### Demo App
-We haev a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
+We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
 
 ### Android Studio
 1. Download the bundle [https://s3.amazonaws.com/strap-libs/connect.aar](https://s3.amazonaws.com/strap-libs/connect.aar)
