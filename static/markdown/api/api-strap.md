@@ -137,6 +137,45 @@ $ curl "https://api2.straphq.com/behavior/asdf-q2er-z6cv-q67r?weekday=tuesday" -
 }
 ```
 
+## Goals
+Get user's platform goals.  Availability sparse across platforms.  Fitbit and Jawbone are the main platforms that provide the goals information.
+
+```GET``` **https://api2.straphq.com/goals/{guid}**
+
+#### Params
+
+| **Param** | **Description** | **Default** | **Required** |
+| :--- | --- | ---: | ---: |
+| guid | The user's GUID | | Yes |
+
+#### Example Request
+```sh
+$ curl "https://api2.straphq.com/goals/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+```
+
+#### Example Response
+```json
+{
+  "guid": "asdf-q2er-z6cv-q67r",
+  "updatedAt": 1450149018,
+  "goals": [
+    {
+      "period": "daily",
+      "section": "activity",
+      "field": "steps",
+      "value": "10000"
+    },
+    {
+      "period": "daily",
+      "section": "sleep",
+      "field": "duration",
+      "value": "480"
+    }
+    {...}
+  ]
+}
+```
+
 ## Job
 Get, create, and delete segmentation jobs.
 
