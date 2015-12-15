@@ -19,7 +19,7 @@ Get activity for a specified user by passing in the user's GUID.
 
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
-| guid | The user's GUID | | Yes |
+| guid | The user's GUID <br> _It can be comma (,) separated GUID list_ | | Yes |
 | date | Which date you want data for (YYYY-MM-DD) | Today | No |
 | start | Which date you want start query for (YYYY-MM-DD) | None | No |
 | end | Which date you want end query for (YYYY-MM-DD) | None | No |
@@ -301,7 +301,7 @@ Get all user month data by page or get user activity for month
 
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
-| guid | The user's GUID | | Not if page specified |
+| guid | The user's GUID <br> _It can be comma (,) separated GUID list_ | | Not if page specified |
 | page | The page of data for month | | Not if guid specified |
 | per_page | The number per page | | Not if guid specified |
 
@@ -763,7 +763,7 @@ Get all user data today by page or get user activity for today.
 
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
-| guid | The user's GUID | | Not if page specified |
+| guid | The user's GUID <br> _It can be comma (,) separated GUID list_ | | Not if page specified |
 | page | The page of data for today | | Not if guid specified |
 | per_page | The number per page | | Not if guid specified |
 
@@ -1078,7 +1078,8 @@ Get all user week data by page or get user activity for week
 
 | **Param** | **Description** | **Default** | **Required** |
 | :--- | --- | ---: | ---: |
-| guid | The user's GUID | | Not if page specified |
+| guid | The user's GUID <br> _It can be comma (,) separated GUID list_ | | Not if page specified |
+| guids | A comma "," separated list of guids | | No |
 | page | The page of data for week | | Not if guid specified |
 | per_page | The number per page | | Not if guid specified |
 
