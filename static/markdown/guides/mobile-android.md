@@ -33,6 +33,7 @@ More infos at [https://developers.google.com/console/help/new/?hl=en_US#installe
       compile(name:'connect', ext:'aar')
       compile 'com.google.android.gms:play-services-fitness:8.3.0'
       compile 'com.squareup.retrofit:retrofit:1.8.0'
+      compile 'com.android.support:customtabs:23.1.1'
   }
   ```
 1. Sync your project
