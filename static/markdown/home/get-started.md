@@ -1,6 +1,5 @@
 # Getting Started with Strap
 
-Strap allows developers to easily integrate wearables into their existing mobile applications, enabling powerful new connections from fitness and health data to existing business logic.
 
 ## Mobile SDKs
 
