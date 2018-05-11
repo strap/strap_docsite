@@ -6,7 +6,7 @@ Developer Site: http://www2.withings.com/us/en/developers
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Callback URL: | https://withings.straphq.com/connect |
+| Callback URL: | https://withings.curanexus.io/connect |
 
 
 ### Withings Form Preview

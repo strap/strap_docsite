@@ -1,3 +1,3 @@
 # README #
 
-Strap Docs as a Node.js project
+curaNEXUS Docs as a Node.js project

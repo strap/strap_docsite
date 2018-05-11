@@ -8,7 +8,7 @@
   },
   "config": {
     "domain": "",
-    "dashboard": "https://my.straphq.com"
+    "dashboard": "https://docs.curanexus.io"
   },
   "main": "server.js",
   "dependencies": {

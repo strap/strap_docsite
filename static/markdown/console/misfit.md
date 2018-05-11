@@ -6,9 +6,9 @@ Developer Site: https://build.misfit.com/
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Authorization Domain: | https://misfit.straphq.com |
+| Authorization Domain: | https://misfit.curanexus.io |
 | Enable Subscriptions: | Profile, Goal, Device, Session, Sleep |
-| Subscription - URL: |  https://misfit.straphq.com/activity |
+| Subscription - URL: |  https://misfit.curanexus.io/activity |
 | Subscription - Format: | json |
 | Subscription - Version: | 1 |
 

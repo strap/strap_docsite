@@ -8,7 +8,7 @@ Developer Site: http://runkeeper.com/developer/healthgraph/
 | :--- | :--- |
 | Read Health Information: | [checked] |
 | Edit Health Information: | [checked] |
-| Authorization Removal Callback URL: | https://runkeeper.straphq.com/disconnect |
+| Authorization Removal Callback URL: | https://runkeeper.curanexus.io/disconnect |
 
 
 ### RunKeeper Form Preview

@@ -6,7 +6,7 @@ Developer Site: https://dashboard.movable.com/developer
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Register Callback URL: | https://movable.straphq.com/connect |
+| Register Callback URL: | https://movable.curanexus.io/connect |
 | Application Type: | Web application with client-side calls |
 
 

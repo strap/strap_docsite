@@ -1,6 +1,6 @@
 # Getting Started with Strap Server SDKs
 
-Strap Server SDKs allows developers to easily pull wearable data into server applications, enabling powerful new connections from fitness and health data to existing business logic.
+curaNEXUS Server SDKs allows developers to easily pull wearable data into server applications, enabling powerful new connections from fitness and health data to existing business logic.
 
 ## How does it work?
 ![Server Architecture](/img/server-arch.png "Server Architecture")

@@ -6,10 +6,10 @@ Developer Site: https://jawbone.com/up/developer
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Authorization URL: | https://jawbone.straphq.com |
-| OAuth Redirect URIs: | https://jawbone.straphq.com/connect |
+| Authorization URL: | https://jawbone.curanexus.io |
+| OAuth Redirect URIs: | https://jawbone.curanexus.io/connect |
 | PubSub - Enabled: |  [selected] |
-| PubSub - Webhook: |  https://jawbone.straphq.com/activity |
+| PubSub - Webhook: |  https://jawbone.curanexus.io/activity |
 
 ### Jawbone Form Preview
 ![](https://storage.googleapis.com/strap-docs/jawbone.png)

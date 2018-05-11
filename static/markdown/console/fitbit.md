@@ -8,9 +8,9 @@ Developer Site: https://dev.fitbit.com
 | :--- | :--- |
 | OAuth 1.0 Application Type: | Browser |
 | OAuth 2.0 Application Type: | Client |
-| Callback URL: | https://fitbit.straphq.com/connect |
+| Callback URL: | https://fitbit.curanexus.io/connect |
 | Default Access Type: | Read & Write |
-| Subscriber - Endpoint URL: |  https://fitbit.straphq.com/activity |
+| Subscriber - Endpoint URL: |  https://fitbit.curanexus.io/activity |
 | Subscriber - Type: |  JSON Body |
 | Subscriber - Subscriber ID: | [empty] |
 

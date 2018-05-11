@@ -1,4 +1,4 @@
-# Strap API
+# curaNEXUS API
 
 ## Authentication
 
@@ -7,13 +7,13 @@ To retrieve reports containing user data, you must pass a valid **read token** t
 #### Example API call passing read token
 
 ```sh
-$ curl "https://api2.straphq.com/users" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/users" --header "x-auth-token: abc123xyz"
 ```
 
 ## Activity
 Get activity for a specified user by passing in the user's GUID.
 
-```GET``` **https://api2.straphq.com/activity/{guid}**
+```GET``` **https://api.curanexus.io/activity/{guid}**
 
 #### Params
 
@@ -28,7 +28,7 @@ Get activity for a specified user by passing in the user's GUID.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?date=2015-01-01&count=1000" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/activity/asdf-q2er-z6cv-q67r?date=2015-01-01&count=1000" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -86,7 +86,7 @@ $ curl "https://api2.straphq.com/activity/asdf-q2er-z6cv-q67r?date=2015-01-01&co
 ## Behavior
 Get user's behavior profile for a weekday.
 
-```GET``` **https://api2.straphq.com/behavior/{guid}**
+```GET``` **https://api.curanexus.io/behavior/{guid}**
 
 #### Params
 
@@ -97,7 +97,7 @@ Get user's behavior profile for a weekday.
 
 #### Example Request
 ```sh
-$ curl "https://api2.straphq.com/behavior/asdf-q2er-z6cv-q67r?weekday=tuesday" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/behavior/asdf-q2er-z6cv-q67r?weekday=tuesday" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -140,7 +140,7 @@ $ curl "https://api2.straphq.com/behavior/asdf-q2er-z6cv-q67r?weekday=tuesday" -
 ## Goals
 Get user's platform goals.  Availability sparse across platforms.  Fitbit and Jawbone are the main platforms that provide the goals information.
 
-```GET``` **https://api2.straphq.com/goals/{guid}**
+```GET``` **https://api.curanexus.io/goals/{guid}**
 
 #### Params
 
@@ -150,7 +150,7 @@ Get user's platform goals.  Availability sparse across platforms.  Fitbit and Ja
 
 #### Example Request
 ```sh
-$ curl "https://api2.straphq.com/goals/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/goals/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -179,7 +179,7 @@ $ curl "https://api2.straphq.com/goals/asdf-q2er-z6cv-q67r" --header "x-auth-tok
 ## Job
 Get, create, and delete segmentation jobs.
 
-```GET``` **https://api2.straphq.com/job/{id}**
+```GET``` **https://api.curanexus.io/job/{id}**
 
 #### Params
 
@@ -191,9 +191,9 @@ Get, create, and delete segmentation jobs.
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/job" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/job/123456789" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/job?status=done" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job/123456789" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job?status=done" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -223,7 +223,7 @@ $ curl "https://api2.straphq.com/job?status=done" --header "x-auth-token: abc123
 ```
 
 <br/>
-```POST``` **https://api2.straphq.com/job**
+```POST``` **https://api.curanexus.io/job**
 
 #### Params
 
@@ -239,8 +239,8 @@ $ curl "https://api2.straphq.com/job?status=done" --header "x-auth-token: abc123
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/job" -X POST -H "application/json" -d '{"name":"My Segmentation", "description": "From June 1st to August 1st.", "startDate": "2015-06-01", "endDate": "2015-08-01"}' -H "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/job" -X POST -H "application/json" -d '{"name":"Another Segmentation", "description": "Specific GUID set", guids: ["abcd", "efgh", "ijkl"]}' -H "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job" -X POST -H "application/json" -d '{"name":"My Segmentation", "description": "From June 1st to August 1st.", "startDate": "2015-06-01", "endDate": "2015-08-01"}' -H "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job" -X POST -H "application/json" -d '{"name":"Another Segmentation", "description": "Specific GUID set", guids: ["abcd", "efgh", "ijkl"]}' -H "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -261,7 +261,7 @@ $ curl "https://api2.straphq.com/job" -X POST -H "application/json" -d '{"name":
 ```
 
 <br/>
-```DELETE``` **https://api2.straphq.com/job/{id}**
+```DELETE``` **https://api.curanexus.io/job/{id}**
 
 #### Params
 
@@ -272,13 +272,13 @@ $ curl "https://api2.straphq.com/job" -X POST -H "application/json" -d '{"name":
 #### Example
 
 ```sh
-$ curl "https://api2.straphq.com/job/123456789" -X DELETE --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job/123456789" -X DELETE --header "x-auth-token: abc123xyz"
 ```
 
 ## Job Data
 Get segmentation job data.
 
-```GET``` **https://api2.straphq.com/job/{id}/data**
+```GET``` **https://api.curanexus.io/job/{id}/data**
 
 #### Params
 
@@ -289,13 +289,13 @@ Get segmentation job data.
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/job/123456789/data" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/job/123456789/data" --header "x-auth-token: abc123xyz"
 ```
 
 ## Month
 Get all user month data by page or get user activity for month
 
-```GET``` **https://api2.straphq.com/month**
+```GET``` **https://api.curanexus.io/month**
 
 #### Params
 
@@ -308,8 +308,8 @@ Get all user month data by page or get user activity for month
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/month?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/month?page=5" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/month?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/month?page=5" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -404,7 +404,7 @@ $ curl "https://api2.straphq.com/month?page=5" --header "x-auth-token: abc123xyz
 ## Report
 Get a specific report by passing in the report id.
 
-```GET``` **https://api2.straphq.com/report/{id}**
+```GET``` **https://api.curanexus.io/report/{id}**
 
 #### Params
 
@@ -415,7 +415,7 @@ Get a specific report by passing in the report id.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/report/xyz123456789" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/report/xyz123456789" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -557,7 +557,7 @@ $ curl "https://api2.straphq.com/report/xyz123456789" --header "x-auth-token: ab
 ## Report Details
 Get a specific report's raw details.
 
-```GET``` **https://api2.straphq.com/report/{id}/raw**
+```GET``` **https://api.curanexus.io/report/{id}/raw**
 
 #### Params
 
@@ -569,8 +569,8 @@ Get a specific report's raw details.
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/report/xyz123456789/raw" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/report/xyz123456789/raw?type=activity" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/report/xyz123456789/raw" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/report/xyz123456789/raw?type=activity" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -599,7 +599,7 @@ $ curl "https://api2.straphq.com/report/xyz123456789/raw?type=activity" --header
 ## Report Food
 Get specific report's food details
 
-```GET``` **https://api2.straphq.com/report/{id}/food**
+```GET``` **https://api.curanexus.io/report/{id}/food**
 
 #### Params
 
@@ -610,7 +610,7 @@ Get specific report's food details
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/report/xyz123456789/food" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/report/xyz123456789/food" --header "x-auth-token: abc123xyz"
 ```
 
 
@@ -657,7 +657,7 @@ $ curl "https://api2.straphq.com/report/xyz123456789/food" --header "x-auth-toke
 ## Report Workout
 Get specific report's workout details
 
-```GET``` **https://api2.straphq.com/report/{id}/workout**
+```GET``` **https://api.curanexus.io/report/{id}/workout**
 
 #### Params
 
@@ -668,7 +668,7 @@ Get specific report's workout details
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/report/xyz123456789/workout" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/report/xyz123456789/workout" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -713,7 +713,7 @@ $ curl "https://api2.straphq.com/report/xyz123456789/workout" --header "x-auth-t
 ## Segmentation
 Get the segmentation report for the project.
 
-```GET``` **https://api2.straphq.com/segmentation**
+```GET``` **https://api.curanexus.io/segmentation**
 
 #### Params
 
@@ -724,8 +724,8 @@ Get the segmentation report for the project.
 
 #### Example Requests
 ```sh
-$ curl "https://api2.straphq.com/segmentation" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/segmentation?date=2015-07-01&period=7day" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/segmentation" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/segmentation?date=2015-07-01&period=7day" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Respsonse
@@ -757,7 +757,7 @@ $ curl "https://api2.straphq.com/segmentation?date=2015-07-01&period=7day" --hea
 ## Today
 Get all user data today by page or get user activity for today.
 
-```GET``` **https://api2.straphq.com/today**
+```GET``` **https://api.curanexus.io/today**
 
 #### Params
 
@@ -770,8 +770,8 @@ Get all user data today by page or get user activity for today.
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/today?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/today?page=5" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/today?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/today?page=5" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -888,7 +888,7 @@ $ curl "https://api2.straphq.com/today?page=5" --header "x-auth-token: abc123xyz
 ## Trend
 Get the trend data for a specified GUID.
 
-```GET``` **https://api2.straphq.com/trend/{guid}**
+```GET``` **https://api.curanexus.io/trend/{guid}**
 
 #### Params
 
@@ -899,7 +899,7 @@ Get the trend data for a specified GUID.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/trend/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/trend/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -985,7 +985,7 @@ $ curl "https://api2.straphq.com/trend/asdf-q2er-z6cv-q67r" --header "x-auth-tok
 ## Trigger
 Get a specific trigger by passing in the trigger id.
 
-```GET``` **https://api2.straphq.com/trigger/{id}**
+```GET``` **https://api.curanexus.io/trigger/{id}**
 
 #### Params
 
@@ -996,7 +996,7 @@ Get a specific trigger by passing in the trigger id.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/trigger/my-trigger" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/trigger/my-trigger" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -1016,7 +1016,7 @@ $ curl "https://api2.straphq.com/trigger/my-trigger" --header "x-auth-token: abc
 ## User
 Get user details for your project.
 
-```GET``` **https://api2.straphq.com/user/{guid}**
+```GET``` **https://api.curanexus.io/user/{guid}**
 
 #### Params
 
@@ -1027,7 +1027,7 @@ Get user details for your project.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/user/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/user/asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -1043,7 +1043,7 @@ $ curl "https://api2.straphq.com/user/asdf-q2er-z6cv-q67r" --header "x-auth-toke
 ## Users
 Get all users for your project.
 
-```GET``` **https://api2.straphq.com/users**
+```GET``` **https://api.curanexus.io/users**
 
 #### Params
 
@@ -1055,7 +1055,7 @@ Get all users for your project.
 #### Example Request
 
 ```sh
-$ curl "https://api2.straphq.com/users?platform=fitbit&count=1000" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/users?platform=fitbit&count=1000" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response
@@ -1072,7 +1072,7 @@ $ curl "https://api2.straphq.com/users?platform=fitbit&count=1000" --header "x-a
 ## Week
 Get all user week data by page or get user activity for week
 
-```GET``` **https://api2.straphq.com/week**
+```GET``` **https://api.curanexus.io/week**
 
 #### Params
 
@@ -1086,8 +1086,8 @@ Get all user week data by page or get user activity for week
 #### Example Requests
 
 ```sh
-$ curl "https://api2.straphq.com/week?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
-$ curl "https://api2.straphq.com/week?page=5" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/week?guid=asdf-q2er-z6cv-q67r" --header "x-auth-token: abc123xyz"
+$ curl "https://api.curanexus.io/week?page=5" --header "x-auth-token: abc123xyz"
 ```
 
 #### Example Response

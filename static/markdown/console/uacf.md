@@ -6,7 +6,7 @@ Developer Site: https://developer.underarmour.com/
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Register Callback URL: | https://uacf.straphq.com/connect |
+| Register Callback URL: | https://uacf.curanexus.io/connect |
 | Application Type: | Web application with client-side calls |
 
 

@@ -1,8 +1,8 @@
-# iOS > Strap Mobile SDK
+# iOS > curaNEXUS Mobile SDK
 
 # StrapConnect
 
-Strap provides a universal cocoa touch framework for iOS applications to integrate the strap product offering into an existing mobile application.
+curaNEXUS provides a universal cocoa touch framework for iOS applications to integrate the curaNEXUS product offering into an existing mobile application.
 
 ## Demo App
 

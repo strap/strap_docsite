@@ -1,4 +1,4 @@
-# Getting Started with Strap
+# Getting Started with curaNEXUS
 
 
 ## Mobile SDKs

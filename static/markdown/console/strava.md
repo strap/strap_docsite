@@ -6,7 +6,7 @@ Developer Site: https://www.strava.com/settings/api
 
 | **Field** | **Value** |
 | :--- | :--- |
-| Authorization Callback Domain: | https://strava.straphq.com/disconnect |
+| Authorization Callback Domain: | https://strava.curanexus.io/disconnect |
 
 
 ### Strava Form Preview

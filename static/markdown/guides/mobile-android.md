@@ -192,7 +192,7 @@ c.getActivityForRange("2015-03-15", "2015-03-17", new Connect.ActivityCallback()
 For convenience a prebuild fragment is provided that displays the user activity of the last 30 days.
 It can be istantiated calling the static method `GetConnectedFragment()` and can be used as part of a user-defined activity.
 ```java    
-private com.straphq.connect.android.ui.fragment.ConnectedFragment connectLibraryConnectedFragment = Connect.GetConnectedFragment();
+private io.curanexus.connect.android.ui.fragment.ConnectedFragment connectLibraryConnectedFragment = Connect.GetConnectedFragment();
 ```
 
 ## Write User Data
