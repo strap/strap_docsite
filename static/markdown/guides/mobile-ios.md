@@ -1,5 +1,7 @@
 # iOS > curaNEXUS Mobile SDK
 
+## Coming Soon
+<!-- 
 # StrapConnect
 
 curaNEXUS provides a universal cocoa touch framework for iOS applications to integrate the curaNEXUS product offering into an existing mobile application.
@@ -254,4 +256,4 @@ Search for a specific term
 Get complete food details
 ```objective-c
 - (void)foodInfo:(NSString *)itemId withCallback:(void (^)(BOOL success, NSString *itemId, NSDictionary *results)) cb;
-```
+``` -->

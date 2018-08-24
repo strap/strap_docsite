@@ -1,13 +1,13 @@
-# Android > Strap Mobile SDK
+# Android > curaNEXUS Mobile SDK
 
-Strap provides an `aar` bundle for integrating existing android applications with the Strap API.
+curaNEXUS provides an `aar` bundle for integrating existing android applications with the curaNEXUS API.
 
 ## Demo App
-We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/strap-libs/MyApplication.rar](https://s3.amazonaws.com/strap-libs/MyApplication.rar)
+We have a demo app avaialble for testing.  You can download it from: [https://s3.amazonaws.com/curanexus-prod-lib/HealthMartDemo.zip](https://s3.amazonaws.com/curanexus-prod-lib/HealthMartDemo.zip)
 
 ## Setup
 ### Register key certificate on Developer Console
-Strap library uses the Fit Api. To access to it you must register the .apk file's public certificate in the Developers Console using your Android package name and SHA-1 fingerprint.
+curaNEXUS library uses the Fit Api. To access to it you must register the .apk file's public certificate in the Developers Console using your Android package name and SHA-1 fingerprint.
 
 To ghet the SHA-1 fingerprint you can call
 ``` keytool -exportcert -alias YOUR_CERTIFICATE_NAME -keystore YOUY_KEYSTORE -list -v ```
@@ -19,7 +19,7 @@ Register the certificate on the Developer Console under `Add credentials` > `OAu
 More infos at [https://developers.google.com/console/help/new/?hl=en_US#installedapplications-android]
 
 ### Android Studio
-1. Download the bundle [https://s3.amazonaws.com/strap-libs/connect.aar](https://s3.amazonaws.com/strap-libs/connect.aar)
+1. Download the bundle [https://s3.amazonaws.com/curanexus-prod-lib/curaNEXUSConnect.aar](https://s3.amazonaws.com/curanexus-prod-lib/curaNEXUSConnect.aar)
 1. Move the bundle into the `libs` directory under your application module
 1. Update your module `build.gradle` to include the following
   ```
