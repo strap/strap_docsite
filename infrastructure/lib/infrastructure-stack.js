@@ -26,7 +26,7 @@ class InfrastructureStack extends cdk.Stack {
     const targetGroup = new lb.ApplicationTargetGroup(this, `${id}-tg`, { vpc: vpc, port: 80, protocol: lb.Protocol.HTTP, targetType: lb.TargetType.IP, targetGroupName: `${id}-tg`, healthCheck: { interval: cdk.Duration.seconds(30), path: "/login", timeout: cdk.Duration.seconds(5) } });
 
     new lb.ApplicationListenerRule(this, `${id}-rule`, {
-      priority: 10,
+      priority: 13,
       listener: listener,
       conditions: [lb.ListenerCondition.hostHeaders(['docs.curanexus.io'])],
       action: lb.ListenerAction.forward([targetGroup])
