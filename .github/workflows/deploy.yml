@@ -1,0 +1,61 @@
+name: deploy-prod
+
+
+on:
+  push:
+    branches:
+      - master
+
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: 'us-west-2'
+
+
+jobs:
+  deploy-prod:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.20.1'
+
+      - name: Install Infrastructure Dependencies
+        working-directory: infrastructure
+        run: npm install
+
+      - name: Install AWS CDK
+        run: sudo npm install -g aws-cdk@1.102.0
+
+      - name: Bootstrapping AWS
+        run: cdk bootstrap aws://${{ secrets.ACCOUNT_NUMBER}}/us-west-2
+
+      - name: Deploying ECR Stack Infrastructure
+        run: cdk deploy --require-approval never engage-docs-repo
+
+      - name: Create SSH file
+        run: |
+          touch id_rsa
+          echo "${{ secrets.ID_RSA }}" >> id_rsa
+
+      - name: Create Docker Container
+        run: docker build -t engage_docs .
+
+      - name: Tag Docker Container
+        run: docker tag engage_docs:latest ${{ secrets.ACCOUNT_NUMBER }}.dkr.ecr.us-west-2.amazonaws.com/engage-docs-repo-ecr:latest
+
+      - name: Get ECR Login Credentials
+        run: aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin ${{ secrets.ACCOUNT_NUMBER }}.dkr.ecr.us-west-2.amazonaws.com
+
+      - name: Push Container to ECR
+        run: docker push ${{ secrets.ACCOUNT_NUMBER }}.dkr.ecr.us-west-2.amazonaws.com/engage-docs-repo-ecr:latest
+
+      - name: Deploy Engage Docs Container and Infrastructure
+        run: cdk deploy --require-approval never engage-docs
