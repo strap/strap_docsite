@@ -1,0 +1,36 @@
+name: destroy-prod
+
+
+on:
+  workflow_dispatch:
+
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: 'us-west-2'
+
+
+jobs:
+  destroy-prod:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.20.1'
+
+      - name: Install Infrastructure Dependencies
+        working-directory: infrastructure
+        run: npm install
+
+      - name: Install AWS CDK
+        run: sudo npm install -g aws-cdk@1.102.0
+
+      - name: Destroy DocuSite Container and Infrastructure
+        run: cdk destroy --force engage-docs
